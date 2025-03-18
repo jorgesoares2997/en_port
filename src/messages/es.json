@@ -50,20 +50,41 @@
     "email": "email@ejemplo.com",
     "rights": "© 2025 Todos los derechos reservados"
   },
-  "Contact": {
-    "title": "Contacto",
-    "myInfo": "Mi Información",
-    "sendMessage": "Enviar un Mensaje",
-    "form": {
-      "name": "Nombre",
-      "email": "Correo",
-      "message": "Mensaje"
+
+  "Aboutpage": {
+    "title": "Acerca de",
+    "me": {
+      "title": "Sobre Mí",
+      "intro": "Hola, mi nombre es Jorge Soares y estoy cursando Análisis y Desarrollo de Sistemas con una profunda curiosidad por el mundo de la tecnología. He estado perfeccionando mis habilidades construyendo aplicaciones full-stack, entregando soluciones completas de principio a fin.",
+      "expertise1": "Mi experiencia incluye el desarrollo de APIs RESTful con ",
+      "expertise2": ", integrando funcionalidades como JavaMail, Spring Security y JWT para sistemas seguros y eficientes. También utilizo ",
+      "expertise3": " para contenerizar mis aplicaciones, garantizando escalabilidad y despliegue continuo.",
+      "frontend1": "En el frontend, creo plataformas responsivas y dinámicas usando ",
+      "frontend2": ", estilizadas con ",
+      "frontend3": "Gestiono estados con ",
+      "frontend4": " y aseguro una tipificación robusta con ",
+      "database": "Mi experiencia con bases de datos se centra en ",
+      "database2": ", permitiéndome crear soluciones confiables y optimizadas.",
+      "currently1": "Actualmente, contribuyo como programador en ",
+      "currently2": ", donde aplico mis habilidades en proyectos reales.",
+      "goal": "Mi objetivo es ampliar mi conocimiento y desarrollar aplicaciones móviles con ",
+      "goal2": ", avanzando aún más en la industria tecnológica.",
+      "connect": "Estoy listo para conectarme con otros profesionales y contribuir a proyectos significativos que impulsen la innovación y el impacto."
     },
-    "submit": "Enviar",
-    "sending": "Enviando...",
-    "successMessage": "¡Correo enviado con éxito! Recibirás una copia como comprobante.",
-    "errorMessage": "Error al enviar el correo. Intenta de nuevo.",
-    "loginToWhatsApp": "Inicia sesión para enviar un mensaje por WhatsApp",
-    "techDescription": "Esta página utiliza Next.js, Axios y autenticación JWT para seguridad y eficiencia. ¡Contáctame para soluciones modernas como esta!"
+    "portfolio": {
+      "title": "Sobre Este Portafolio",
+      "intro": "Este portafolio es un reflejo de mi trayectoria como desarrollador full-stack. Desarrollado con ",
+      "intro2": ", utiliza ",
+      "intro3": " para un diseño moderno y responsivo.",
+      "frontend1": "En el frontend, implementé la gestión de estado con ",
+      "frontend2": " para manejar traducciones y autenticación, mientras que el sistema de internacionalización fue creado desde cero con soporte para múltiples idiomas (portugués, inglés y español).",
+      "frontend3": "Las animaciones sutiles y el tema neón se inspiraron en la estética cyberpunk, ofreciendo una experiencia visual única.",
+      "backend1": "En el backend, construí una API RESTful con ",
+      "backend2": ", alojada en Render (",
+      "backend3": "Soporta autenticación social vía OAuth 2.0 con Google, LinkedIn, GitHub y Apple, además de envío de correos y mensajes por WhatsApp usando ",
+      "backend4": " para seguridad.",
+      "goal": "El objetivo de este proyecto fue demostrar mis habilidades para crear soluciones completas, desde la concepción hasta el despliegue, integrando frontend, backend y servicios externos de manera eficiente y escalable."
+    },
+    "and": " y "
   }
 }

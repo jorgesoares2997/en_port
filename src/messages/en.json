@@ -50,20 +50,41 @@
     "email": "email@example.com",
     "rights": "© 2025 All rights reserved"
   },
-  "Contact": {
-    "title": "Contact",
-    "myInfo": "My Info",
-    "sendMessage": "Send a Message",
-    "form": {
-      "name": "Name",
-      "email": "Email",
-      "message": "Message"
+
+  "Aboutpage": {
+    "title": "About",
+    "me": {
+      "title": "About Me",
+      "intro": "Hello, my name is Jorge Soares, and I’m pursuing a degree in Systems Analysis and Development with a deep curiosity for the tech world. I’ve been honing my skills by building full-stack applications, delivering end-to-end solutions.",
+      "expertise1": "My expertise includes developing RESTful APIs with ",
+      "expertise2": ", integrating features like JavaMail, Spring Security, and JWT for secure and efficient systems. I also use ",
+      "expertise3": " to containerize my applications, ensuring scalability and seamless deployment.",
+      "frontend1": "On the frontend, I craft responsive and dynamic platforms using ",
+      "frontend2": ", styled with ",
+      "frontend3": "I manage state with ",
+      "frontend4": " and ensure robust typing with ",
+      "database": "My database experience centers on ",
+      "database2": ", enabling me to create reliable and optimized solutions.",
+      "currently1": "Currently, I’m contributing as a programmer at ",
+      "currently2": ", where I apply my skills to real-world projects.",
+      "goal": "My goal is to expand my knowledge and develop mobile applications using ",
+      "goal2": ", furthering my growth in the tech industry.",
+      "connect": "I’m ready to connect with other professionals and contribute to meaningful projects that drive innovation and impact."
     },
-    "submit": "Send",
-    "sending": "Sending...",
-    "successMessage": "Email sent successfully! You’ll receive a copy as proof.",
-    "errorMessage": "Error sending email. Please try again.",
-    "loginToWhatsApp": "Log in to send a WhatsApp message",
-    "techDescription": "This page leverages Next.js, Axios, and JWT authentication for security and efficiency. Contact me for modern solutions like this!"
+    "portfolio": {
+      "title": "About This Portfolio",
+      "intro": "This portfolio is a reflection of my journey as a full-stack developer. Built with ",
+      "intro2": ", it leverages ",
+      "intro3": " for a modern and responsive design.",
+      "frontend1": "On the frontend, I implemented state management with ",
+      "frontend2": " to handle translations and authentication, while the internationalization system was built from scratch with support for multiple languages (Portuguese, English, and Spanish).",
+      "frontend3": "Subtle animations and a neon theme were inspired by cyberpunk aesthetics, delivering a unique visual experience.",
+      "backend1": "On the backend, I developed a RESTful API with ",
+      "backend2": ", hosted on Render (",
+      "backend3": "It supports social authentication via OAuth 2.0 with Google, LinkedIn, GitHub, and Apple, plus email and WhatsApp messaging using ",
+      "backend4": " for security.",
+      "goal": "The goal of this project was to showcase my ability to create complete solutions, from conception to deployment, integrating frontend, backend, and external services efficiently and scalably."
+    },
+    "and": " and "
   }
 }

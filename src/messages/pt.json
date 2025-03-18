@@ -27,21 +27,7 @@
     "title": "Nossos Projetos",
     "description": "Trabalhos eletrizantes em andamento"
   },
-  "Contact": {
-    "title": "Contato",
-    "myInfo": "Minhas Informações",
-    "sendMessage": "Envie uma Mensagem",
-    "form": {
-      "name": "Nome",
-      "email": "Email",
-      "message": "Mensagem"
-    },
-    "submit": "Enviar",
-    "sending": "Enviando...",
-    "successMessage": "Email enviado com sucesso! Você receberá uma cópia como comprovante.",
-    "errorMessage": "Erro ao enviar o email. Tente novamente.",
-    "loginToWhatsApp": "Faça login para enviar mensagem no WhatsApp"
-  },
+
   "Footer": {
     "about": "Sobre",
     "description": "Um projeto Next.js futurista com vibes neon",
@@ -65,5 +51,41 @@
     "errorMessage": "Erro ao enviar o email. Tente novamente.",
     "loginToWhatsApp": "Faça login para enviar mensagem no WhatsApp",
     "techDescription": "Esta página usa Next.js, Axios, e autenticação JWT para segurança e eficiência. Entre em contato comigo para soluções modernas como esta!"
+  },
+  "Aboutpage": {
+    "title": "Sobre",
+    "me": {
+      "title": "Sobre Mim",
+      "intro": "Olá, meu nome é Jorge Soares, e estou cursando Análise e Desenvolvimento de Sistemas com uma curiosidade profunda pelo mundo da tecnologia. Tenho aprimorado minhas habilidades construindo aplicações full-stack, entregando soluções completas do início ao fim.",
+      "expertise1": "Minha experiência inclui o desenvolvimento de APIs RESTful com ",
+      "expertise2": ", integrando funcionalidades como JavaMail, Spring Security e JWT para sistemas seguros e eficientes. Também utilizo ",
+      "expertise3": " para containerizar minhas aplicações, garantindo escalabilidade e deploy contínuo.",
+      "frontend1": "No frontend, crio plataformas responsivas e dinâmicas usando ",
+      "frontend2": ", estilizadas com ",
+      "frontend3": "Gerencio estados com ",
+      "frontend4": " e asseguro tipagem robusta com ",
+      "database": "Minha experiência com bancos de dados é focada em ",
+      "database2": ", permitindo-me criar soluções confiáveis e otimizadas.",
+      "currently1": "Atualmente, contribuo como programador na ",
+      "currently2": ", onde aplico minhas habilidades em projetos reais.",
+      "goal": "Meu objetivo é expandir meu conhecimento e desenvolver aplicações móveis com ",
+      "goal2": ", avançando ainda mais na indústria de tecnologia.",
+      "connect": "Estou pronto para me conectar com outros profissionais e contribuir para projetos significativos que impulsionem inovação e impacto."
+    },
+    "portfolio": {
+      "title": "Sobre Este Portfólio",
+      "intro": "Este portfólio é um reflexo da minha jornada como desenvolvedor full-stack. Desenvolvido com ",
+      "intro2": ", ele utiliza ",
+      "intro3": " para um design moderno e responsivo.",
+      "frontend1": "No frontend, implementei gerenciamento de estado com ",
+      "frontend2": " para lidar com traduções e autenticação, enquanto o sistema de internacionalização foi criado do zero com suporte a múltiplos idiomas (português, inglês e espanhol).",
+      "frontend3": "As animações sutis e o tema neon foram inspirados pela estética cyberpunk, trazendo uma experiência visual única.",
+      "backend1": "No backend, construí uma API RESTful com ",
+      "backend2": ", hospedada em Render (",
+      "backend3": "Ela suporta autenticação social via OAuth 2.0 com Google, LinkedIn, GitHub e Apple, além de envio de emails e mensagens via WhatsApp usando ",
+      "backend4": " para segurança.",
+      "goal": "O objetivo deste projeto foi demonstrar minhas habilidades em criar soluções completas, desde a concepção até o deploy, integrando frontend, backend e serviços externos de forma eficiente e escalável."
+    },
+    "and": " e "
   }
 }
