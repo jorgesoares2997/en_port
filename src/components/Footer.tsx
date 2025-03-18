@@ -1,9 +1,9 @@
 // src/components/Footer.tsx
 "use client";
-import { useLanguageStore } from "@/stores/languageStore";
+import { useTranslationStore } from "@/stores/translationStore";
 
 export default function Footer() {
-  const { t } = useLanguageStore();
+  const { t } = useTranslationStore();
 
   return (
     <footer className="bg-dark-blue text-neon-blue py-8 mt-auto">

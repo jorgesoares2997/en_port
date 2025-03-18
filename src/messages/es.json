@@ -1,27 +1,69 @@
 {
-    "Navbar": {
-      "home": "Inicio",
-      "about": "Acerca de",
-      "projects": "Proyectos"
+  "Navbar": {
+    "home": "Inicio",
+    "about": "Acerca de",
+    "projects": "Proyectos"
+  },
+  "Home": {
+    "title": "Portafolio Tech",
+    "description": "¡Bienvenido a mi portafolio tech! Encuentra soluciones innovadoras para tu negocio.",
+    "techStackTitle": "Tecnologías Utilizadas",
+    "techStackDescription": "Construí este portafolio con herramientas modernas para ofrecer lo mejor en rendimiento y diseño:",
+    "tech": {
+      "nextjs": "Framework de React para renderización del lado del servidor y sitios rápidos y escalables.",
+      "typescript": "Tipado estático para un código robusto y sin errores.",
+      "tailwind": "Estilización rápida y responsiva con CSS utilitario.",
+      "zustand": "Gestión de estado ligera y eficiente para una experiencia fluida.",
+      "tsparticles": "Animaciones de partículas para un look futurista e interactivo."
     },
-    "Home": {
-      "title": "Bienvenido a Casa",
-      "description": "Una página de inicio con energía neón"
+    "contactPrompt": "¿Necesitas esto en tu negocio? ¡No dudes en contactarme!",
+    "cta": "Mira Mis Proyectos"
+  },
+  "About": {
+    "title": "Sobre Nosotros",
+    "description": "Nuestra historia cargada de neón"
+  },
+  "Projects": {
+    "title": "Nuestros Proyectos",
+    "description": "Trabajos electrizantes en progreso"
+  },
+  "Contact": {
+    "title": "Contacto",
+    "myInfo": "Mi Información",
+    "sendMessage": "Enviar un Mensaje",
+    "form": {
+      "name": "Nombre",
+      "email": "Correo",
+      "message": "Mensaje"
     },
-    "About": {
-      "title": "Sobre Nosotros",
-      "description": "Nuestra historia cargada de neón"
+    "submit": "Enviar",
+    "sending": "Enviando...",
+    "successMessage": "¡Correo enviado con éxito! Recibirás una copia como comprobante.",
+    "errorMessage": "Error al enviar el correo. Intenta de nuevo.",
+    "loginToWhatsApp": "Inicia sesión para enviar un mensaje por WhatsApp"
+  },
+  "Footer": {
+    "about": "Acerca de",
+    "description": "Un proyecto Next.js futurista con vibras neón",
+    "links": "Enlaces",
+    "contact": "Contacto",
+    "email": "email@ejemplo.com",
+    "rights": "© 2025 Todos los derechos reservados"
+  },
+  "Contact": {
+    "title": "Contacto",
+    "myInfo": "Mi Información",
+    "sendMessage": "Enviar un Mensaje",
+    "form": {
+      "name": "Nombre",
+      "email": "Correo",
+      "message": "Mensaje"
     },
-    "Projects": {
-      "title": "Nuestros Proyectos",
-      "description": "Trabajos electrizantes en progreso"
-    },
-    "Footer": {
-      "about": "Acerca de",
-      "description": "Un proyecto Next.js futurista con vibras neón",
-      "links": "Enlaces",
-      "contact": "Contacto",
-      "email": "email@ejemplo.com",
-      "rights": "© 2025 Todos los derechos reservados"
-    }
+    "submit": "Enviar",
+    "sending": "Enviando...",
+    "successMessage": "¡Correo enviado con éxito! Recibirás una copia como comprobante.",
+    "errorMessage": "Error al enviar el correo. Intenta de nuevo.",
+    "loginToWhatsApp": "Inicia sesión para enviar un mensaje por WhatsApp",
+    "techDescription": "Esta página utiliza Next.js, Axios y autenticación JWT para seguridad y eficiencia. ¡Contáctame para soluciones modernas como esta!"
   }
+}

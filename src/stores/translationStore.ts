@@ -1,4 +1,4 @@
-// src/stores/languageStore.ts
+// src/stores/translationStore.ts
 import { create } from "zustand";
 
 // Tipo para as traduções
@@ -11,6 +11,17 @@ interface Translations {
   Home: {
     title: string;
     description: string;
+    techStackTitle: string;
+    techStackDescription: string;
+    tech: {
+      nextjs: string;
+      typescript: string;
+      tailwind: string;
+      zustand: string;
+      tsparticles: string;
+    };
+    contactPrompt: string;
+    cta: string;
   };
   About: {
     title: string;
@@ -19,6 +30,22 @@ interface Translations {
   Projects: {
     title: string;
     description: string;
+  };
+  Contact: {
+    title: string;
+    myInfo: string;
+    sendMessage: string;
+    form: {
+      name: string;
+      email: string;
+      message: string;
+    };
+    submit: string;
+    sending: string;
+    successMessage: string;
+    errorMessage: string;
+    loginToWhatsApp: string;
+    techDescription: string;
   };
   Footer: {
     about: string;
@@ -40,63 +67,53 @@ const loadTranslations = async (locale: string): Promise<Translations> => {
     case "es":
       return (await import("../messages/es.json")).default;
     default:
-      return (await import("../messages/pt.json")).default; // Fallback para "pt"
+      return (await import("../messages/pt.json")).default;
   }
 };
 
-// Função para detectar o idioma do navegador
 const getBrowserLocale = (): string => {
   const browserLocales = navigator.languages || [navigator.language];
   const supportedLocales = ["pt", "en", "es"];
-
   for (const lang of browserLocales) {
     const locale = lang.split("-")[0].toLowerCase();
     if (supportedLocales.includes(locale)) {
       return locale;
     }
   }
-  return "pt"; // Fallback para "pt"
+  return "pt";
 };
 
-// Interface do estado e ações do store
-interface LanguageState {
+interface TranslationState {
   locale: string;
   translations: Translations | null;
   setLocale: (locale: string) => void;
   t: (key: string) => string;
 }
 
-export const useLanguageStore = create<LanguageState>((set, get) => ({
-  locale: getBrowserLocale(), // Inicializa com o idioma do navegador
-  translations: null, // Inicialmente nulo até carregar
+export const useTranslationStore = create<TranslationState>((set, get) => ({
+  locale: getBrowserLocale(),
+  translations: null,
 
-  // Função para mudar o idioma e carregar traduções
   setLocale: async (locale: string) => {
     const translations = await loadTranslations(locale);
     set({ locale, translations });
   },
 
-  // Função de tradução
   t: (key: string) => {
     const { translations } = get();
     if (!translations) return key;
-
     const keys = key.split(".");
-    let value: Translations | Translations[keyof Translations] | string =
-      translations;
-
+    let value: Translations | Translations[keyof Translations] | string = translations;
     for (const k of keys) {
       if (typeof value === "string") return value;
       value = (value as Translations)[k as keyof Translations] ?? key;
     }
-
     return typeof value === "string" ? value : key;
   },
 }));
 
-// Carrega as traduções iniciais ao criar o store
 const initializeTranslations = async () => {
-  const { setLocale, locale } = useLanguageStore.getState();
-  await setLocale(locale); // Carrega as traduções para o idioma inicial
+  const { setLocale, locale } = useTranslationStore.getState();
+  await setLocale(locale);
 };
 initializeTranslations();

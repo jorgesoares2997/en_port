@@ -1,27 +1,69 @@
 {
-    "Navbar": {
-      "home": "Home",
-      "about": "About",
-      "projects": "Projects"
+  "Navbar": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects"
+  },
+  "Home": {
+    "title": "Tech Portfolio",
+    "description": "Welcome to my tech portfolio! Discover innovative solutions for your business.",
+    "techStackTitle": "Technologies Used",
+    "techStackDescription": "I built this portfolio with cutting-edge tools to deliver top performance and design:",
+    "tech": {
+      "nextjs": "React framework for server-side rendering and fast, scalable websites.",
+      "typescript": "Static typing for robust, error-free code.",
+      "tailwind": "Fast and responsive styling with utility-first CSS.",
+      "zustand": "Lightweight and efficient state management for a seamless experience.",
+      "tsparticles": "Particle animations for a futuristic and interactive look."
     },
-    "Home": {
-      "title": "Welcome Home",
-      "description": "A neon-powered home page"
+    "contactPrompt": "Need this for your business? Don’t hesitate to reach out!",
+    "cta": "Check Out My Projects"
+  },
+  "About": {
+    "title": "About Us",
+    "description": "Our neon-charged story"
+  },
+  "Projects": {
+    "title": "Our Projects",
+    "description": "Electrifying works in progress"
+  },
+  "Contact": {
+    "title": "Contact",
+    "myInfo": "My Info",
+    "sendMessage": "Send a Message",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message"
     },
-    "About": {
-      "title": "About Us",
-      "description": "Our neon-charged story"
+    "submit": "Send",
+    "sending": "Sending...",
+    "successMessage": "Email sent successfully! You’ll receive a copy as proof.",
+    "errorMessage": "Error sending email. Please try again.",
+    "loginToWhatsApp": "Log in to send a WhatsApp message"
+  },
+  "Footer": {
+    "about": "About",
+    "description": "A futuristic Next.js project with neon vibes",
+    "links": "Links",
+    "contact": "Contact",
+    "email": "email@example.com",
+    "rights": "© 2025 All rights reserved"
+  },
+  "Contact": {
+    "title": "Contact",
+    "myInfo": "My Info",
+    "sendMessage": "Send a Message",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message"
     },
-    "Projects": {
-      "title": "Our Projects",
-      "description": "Electrifying works in progress"
-    },
-    "Footer": {
-      "about": "About",
-      "description": "A futuristic Next.js project with neon vibes",
-      "links": "Links",
-      "contact": "Contact",
-      "email": "email@example.com",
-      "rights": "© 2025 All rights reserved"
-    }
+    "submit": "Send",
+    "sending": "Sending...",
+    "successMessage": "Email sent successfully! You’ll receive a copy as proof.",
+    "errorMessage": "Error sending email. Please try again.",
+    "loginToWhatsApp": "Log in to send a WhatsApp message",
+    "techDescription": "This page leverages Next.js, Axios, and JWT authentication for security and efficiency. Contact me for modern solutions like this!"
   }
+}

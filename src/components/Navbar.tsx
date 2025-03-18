@@ -2,10 +2,10 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import { useLanguageStore } from "@/stores/languageStore";
+import { useTranslationStore } from "@/stores/translationStore";
 
 export default function Navbar() {
-  const { t, locale, setLocale } = useLanguageStore();
+  const { t, locale, setLocale } = useTranslationStore();
   const [isOpen, setIsOpen] = useState(false);
 
   const flags: { [key: string]: string } = {
