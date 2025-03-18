@@ -2,7 +2,9 @@
   "Navbar": {
     "home": "Inicio",
     "about": "Acerca de",
-    "projects": "Proyectos"
+    "projects": "Proyectos",
+    "toolsAndTechs": "Herramientas y Tecnologías",
+    "contact": "Contacto"
   },
   "Home": {
     "title": "Portafolio Tech",
@@ -87,5 +89,25 @@
       "goal": "El objetivo de este proyecto fue demostrar mis habilidades para crear soluciones completas, desde la concepción hasta el despliegue, integrando frontend, backend y servicios externos de manera eficiente y escalable."
     },
     "and": " y "
+  },
+
+  "ToolsAndTechs": {
+    "title": "Herramientas y Tecnologías",
+    "tech1": {
+      "title": "Java Spring Boot",
+      "description": "Utilizo Spring Boot para crear APIs RESTful robustas y seguras, integrando funcionalidades como autenticación JWT, envío de correos con JavaMail y seguridad con Spring Security."
+    },
+    "tech2": {
+      "title": "Next.js y React",
+      "description": "Desarrollo interfaces dinámicas y responsivas con Next.js y React, aprovechando SSR y CSR para una experiencia de usuario optimizada."
+    },
+    "tech3": {
+      "title": "Docker",
+      "description": "Contenerizo mis aplicaciones con Docker y Docker Compose, asegurando un despliegue consistente y escalable en diferentes entornos."
+    },
+    "tech4": {
+      "title": "TypeScript y Tailwind CSS",
+      "description": "Uso TypeScript para tipado seguro y Tailwind CSS para un estilizado rápido y moderno, creando interfaces elegantes y funcionales."
+    }
   }
 }

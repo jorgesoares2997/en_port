@@ -2,7 +2,9 @@
   "Navbar": {
     "home": "Home",
     "about": "About",
-    "projects": "Projects"
+    "projects": "Projects",
+    "toolsAndTechs": "Tools and Techs",
+    "contact": "Contact"
   },
   "Home": {
     "title": "Tech Portfolio",
@@ -41,7 +43,7 @@
     "successMessage": "Email sent successfully! You’ll receive a copy as proof.",
     "errorMessage": "Error sending email. Please try again.",
     "loginToWhatsApp": "Log in to send a WhatsApp message",
-      "techDescription": "Tecnologias que utilizo no projeto"
+    "techDescription": "Tecnologias que utilizo no projeto"
   },
   "Footer": {
     "about": "About",
@@ -87,5 +89,25 @@
       "goal": "The goal of this project was to showcase my ability to create complete solutions, from conception to deployment, integrating frontend, backend, and external services efficiently and scalably."
     },
     "and": " and "
+  },
+
+  "ToolsAndTechs": {
+    "title": "Tools and Technologies",
+    "tech1": {
+      "title": "Java Spring Boot",
+      "description": "I use Spring Boot to build robust and secure RESTful APIs, integrating features like JWT authentication, email sending with JavaMail, and security with Spring Security."
+    },
+    "tech2": {
+      "title": "Next.js and React",
+      "description": "I develop dynamic and responsive interfaces with Next.js and React, leveraging SSR and CSR for an optimized user experience."
+    },
+    "tech3": {
+      "title": "Docker",
+      "description": "I containerize my applications with Docker and Docker Compose, ensuring consistent and scalable deployment across different environments."
+    },
+    "tech4": {
+      "title": "TypeScript and Tailwind CSS",
+      "description": "I use TypeScript for safe typing and Tailwind CSS for fast, modern styling, creating sleek and functional interfaces."
+    }
   }
 }
