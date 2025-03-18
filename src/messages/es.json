@@ -40,7 +40,8 @@
     "sending": "Enviando...",
     "successMessage": "¡Correo enviado con éxito! Recibirás una copia como comprobante.",
     "errorMessage": "Error al enviar el correo. Intenta de nuevo.",
-    "loginToWhatsApp": "Inicia sesión para enviar un mensaje por WhatsApp"
+    "loginToWhatsApp": "Inicia sesión para enviar un mensaje por WhatsApp",
+    "techDescription": "Tecnologias que utilizo no projeto"
   },
   "Footer": {
     "about": "Acerca de",
