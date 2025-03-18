@@ -1,11 +1,22 @@
-// src/app/contact/page.tsx
 "use client";
+
+import { useEffect, useState } from "react";
 import { useTranslationStore } from "@/stores/translationStore";
 import ContactInfo from "@/components/ContactInfo";
 import ContactForm from "@/components/ContactForm";
 
 export default function Contact() {
-  const { t } = useTranslationStore();
+  const { t, translations } = useTranslationStore();
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  // Se as traduções ainda não carregaram, evite renderizar conteúdo vazio
+  if (!isMounted || !translations) {
+    return <div className="text-center text-gray-400">Carregando...</div>;
+  }
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
