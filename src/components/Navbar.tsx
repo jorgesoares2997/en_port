@@ -1,11 +1,11 @@
 // src/components/Navbar.tsx
 "use client";
-import { useLanguage } from "@/app/contexts/LanguageContext";
 import Link from "next/link";
 import { useState } from "react";
+import { useLanguageStore } from "@/stores/languageStore";
 
 export default function Navbar() {
-  const { t, locale, setLocale } = useLanguage();
+  const { t, locale, setLocale } = useLanguageStore();
   const [isOpen, setIsOpen] = useState(false);
 
   const flags: { [key: string]: string } = {
@@ -19,11 +19,6 @@ export default function Navbar() {
     { code: "en", name: "English" },
     { code: "es", name: "Español" },
   ];
-
-  const handleLocaleChange = (newLocale: string) => {
-    setLocale(newLocale);
-    setIsOpen(false);
-  };
 
   return (
     <nav className="fixed top-0 w-full bg-dark-blue/80 backdrop-blur-md z-50">
@@ -53,7 +48,6 @@ export default function Navbar() {
             >
               {t("Navbar.projects")}
             </Link>
-            {/* Menu de Idiomas */}
             <div className="relative">
               <button
                 onClick={() => setIsOpen(!isOpen)}
@@ -62,14 +56,17 @@ export default function Navbar() {
                 {flags[locale]}
               </button>
               {isOpen && (
-                <div className="absolute right-0 mt-2 w-16 bg-dark-blue rounded-md shadow-lg z-50">
+                <div className="absolute right-0 mt-2 w-12 bg-dark-blue rounded-md shadow-lg z-50">
                   {languages.map((lang) => (
                     <button
                       key={lang.code}
-                      onClick={() => handleLocaleChange(lang.code)}
-                      className="block w-full text-center py-2 text-neon-blue hover:text-neon-pink transition-colors"
+                      onClick={() => {
+                        setLocale(lang.code);
+                        setIsOpen(false);
+                      }}
+                      className="block w-full text-left px-4 py-2 text-neon-blue hover:text-neon-pink transition-colors"
                     >
-                      {flags[lang.code]}
+                      {flags[lang.code]} 
                     </button>
                   ))}
                 </div>

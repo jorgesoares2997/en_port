@@ -1,10 +1,9 @@
 // src/components/Footer.tsx
 "use client";
-
-import { useLanguage } from "@/app/contexts/LanguageContext";
+import { useLanguageStore } from "@/stores/languageStore";
 
 export default function Footer() {
-  const { t } = useLanguage();
+  const { t } = useLanguageStore();
 
   return (
     <footer className="bg-dark-blue text-neon-blue py-8 mt-auto">
@@ -16,28 +15,7 @@ export default function Footer() {
             </h3>
             <p className="mt-2 text-sm">{t("Footer.description")}</p>
           </div>
-          <div>
-            <h3 className="text-neon-green text-lg font-semibold">
-              {t("Footer.links")}
-            </h3>
-            <ul className="mt-2 space-y-2 text-sm">
-              <li>
-                <a href="/home" className="hover:text-neon-pink">
-                  {t("Navbar.home")}
-                </a>
-              </li>
-              <li>
-                <a href="/about" className="hover:text-neon-pink">
-                  {t("Navbar.about")}
-                </a>
-              </li>
-              <li>
-                <a href="/projects" className="hover:text-neon-pink">
-                  {t("Navbar.projects")}
-                </a>
-              </li>
-            </ul>
-          </div>
+
           <div>
             <h3 className="text-neon-green text-lg font-semibold">
               {t("Footer.contact")}
