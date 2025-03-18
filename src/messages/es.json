@@ -1,0 +1,27 @@
+{
+    "Navbar": {
+      "home": "Inicio",
+      "about": "Acerca de",
+      "projects": "Proyectos"
+    },
+    "Home": {
+      "title": "Bienvenido a Casa",
+      "description": "Una página de inicio con energía neón"
+    },
+    "About": {
+      "title": "Sobre Nosotros",
+      "description": "Nuestra historia cargada de neón"
+    },
+    "Projects": {
+      "title": "Nuestros Proyectos",
+      "description": "Trabajos electrizantes en progreso"
+    },
+    "Footer": {
+      "about": "Acerca de",
+      "description": "Un proyecto Next.js futurista con vibras neón",
+      "links": "Enlaces",
+      "contact": "Contacto",
+      "email": "email@ejemplo.com",
+      "rights": "© 2025 Todos los derechos reservados"
+    }
+  }

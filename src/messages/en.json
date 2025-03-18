@@ -1,0 +1,27 @@
+{
+    "Navbar": {
+      "home": "Home",
+      "about": "About",
+      "projects": "Projects"
+    },
+    "Home": {
+      "title": "Welcome Home",
+      "description": "A neon-powered home page"
+    },
+    "About": {
+      "title": "About Us",
+      "description": "Our neon-charged story"
+    },
+    "Projects": {
+      "title": "Our Projects",
+      "description": "Electrifying works in progress"
+    },
+    "Footer": {
+      "about": "About",
+      "description": "A futuristic Next.js project with neon vibes",
+      "links": "Links",
+      "contact": "Contact",
+      "email": "email@example.com",
+      "rights": "© 2025 All rights reserved"
+    }
+  }
