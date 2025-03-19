@@ -106,8 +106,8 @@
       "description": "Docker es una plataforma de contenerización que utilizo para encapsular aplicaciones y sus dependencias en contenedores ligeros y portátiles, garantizando consistencia entre entornos de desarrollo, pruebas y producción. Con Docker Compose, orquesto múltiples contenedores de manera simplificada, definiendo servicios, redes y volúmenes en un archivo YAML. Por ejemplo, en esta aplicación, podría contenerizar el frontend (Next.js), el backend (Spring Boot) y un servicio SMTP (como MailHog) en un solo `docker-compose.yml`, permitiendo iniciarlo con un comando (`docker-compose up`). Esto facilita el despliegue en plataformas como Render o localmente, reduciendo problemas de configuración y mejorando la escalabilidad."
     },
     "tech4": {
-      "title": "TypeScript y Tailwind CSS",
-      "description": "Uso TypeScript para tipado seguro y Tailwind CSS para un estilizado rápido y moderno, creando interfaces elegantes y funcionales."
+      "title": "Axios (Consumo de APIs)",
+      "description": "Axios es una biblioteca HTTP basada en promesas que utilizo para consumir APIs de manera eficiente y robusta en aplicaciones web. Con soporte para solicitudes GET, POST y manejo de errores, Axios simplifica la integración con servicios externos como OpenWeatherMap para datos climáticos y Unsplash para imágenes dinámicas. En este proyecto, implementé llamadas asíncronas para obtener datos en tiempo real, manejando respuestas JSON y actualizando la UI dinámicamente. El ejemplo al lado demuestra cómo Axios obtiene el clima de una ciudad y una imagen de fondo, destacando su facilidad de uso y flexibilidad."
     }
   },
   "Form": {
