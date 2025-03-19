@@ -42,6 +42,18 @@ export default function ToolsAndTechs() {
       description: t("ToolsAndTechs.tech5.description"),
       imageUrl: "https://port-bu.s3.eu-north-1.amazonaws.com/bucket.jpg",
     },
+    {
+      title: t("ToolsAndTechs.tech6.title"),
+      description: t("ToolsAndTechs.tech6.description"),
+    },
+    {
+      title: t("ToolsAndTechs.tech7.title"),
+      description: t("ToolsAndTechs.tech7.description"),
+    },
+    {
+      title: t("ToolsAndTechs.tech8.title"),
+      description: t("ToolsAndTechs.tech8.description"),
+    },
   ];
   const bgColors = [
     "bg-dark-blue/60",
@@ -49,6 +61,9 @@ export default function ToolsAndTechs() {
     "bg-dark-blue/60",
     "bg-neon-pink/60",
     "bg-dark-blue/60",
+    "bg-neon-pink/60",
+    "bg-dark-blue/60",
+    "bg-neon-pink/60",
   ];
 
   return (

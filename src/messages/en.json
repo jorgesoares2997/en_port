@@ -120,6 +120,18 @@
     "tech5": {
       "title": "Amazon S3 (Cloud Storage)",
       "description": "All images and videos on this site are stored in an Amazon S3 (Simple Storage Service) bucket, a highly scalable and durable cloud storage service from AWS. S3 provides an object storage infrastructure that allows hosting files securely, accessibly, and cost-effectively, with 99.999999999% durability. I use S3 to centralize multimedia assets, leveraging its integration with web applications through public or pre-signed URLs, as well as its ability to scale automatically with traffic. This service is crucial for ensuring low latency, high availability, and reliable backups, optimizing performance and user experience in distributed projects."
+    },
+    "tech6": {
+      "title": "JWT (JSON Web Tokens)",
+      "description": "I use JSON Web Tokens (JWT) for secure authentication and authorization in this project’s backend, built with Java Spring Boot. JWT is an open standard that encapsulates user information in a digitally signed token, consisting of a header, payload, and signature, ensuring integrity and authenticity. After login, the token is generated and sent to the client, which uses it in subsequent requests via the Authorization header. Its importance in robust websites lies in its statelessness, enabling horizontal scalability without server-side session storage, plus efficient validation and protection against attacks like CSRF and XSS when properly configured."
+    },
+    "tech7": {
+      "title": "Zustand (State Management)",
+      "description": "Zustand is a lightweight state management library I use in this site’s frontend, built with Next.js. Unlike heavier solutions like Redux, Zustand provides a minimalist, reactive API based on hooks to manage global states like language and themes. In this project, I implemented translation control with Zustand, enabling real-time updates without unnecessary re-renders. Its importance for robust websites lies in its simplicity, optimized performance (avoiding boilerplate), and scalability, making it ideal for modern applications requiring efficient and maintainable state management."
+    },
+    "tech8": {
+      "title": "OpenID (Decentralized Authentication)",
+      "description": "OpenID is a decentralized authentication protocol I integrated into this project to provide secure login via external identity providers like Google or Auth0. Based on OAuth 2.0, OpenID Connect adds an identity layer to the authorization flow, returning an ID Token that authenticates the user. In the Spring Boot backend, I configured OpenID support to validate tokens and manage sessions, reducing the need for a local login system. Its importance in robust websites lies in enhanced security, interoperability with popular services, and user experience, enabling fast, reliable authentication without direct password management."
     }
   },
   "Form": {

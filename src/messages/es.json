@@ -116,6 +116,18 @@
     "tech5": {
       "title": "Amazon S3 (Almacenamiento en la Nube)",
       "description": "Todas las imágenes y videos de este sitio están almacenados en un bucket de Amazon S3 (Simple Storage Service), un servicio de almacenamiento en la nube altamente escalable y duradero de AWS. El S3 ofrece una infraestructura de almacenamiento de objetos que permite alojar archivos de forma segura, accesible y económica, con un 99,999999999% de durabilidad. Utilizo S3 para centralizar activos multimedia, aprovechando su integración con aplicaciones web mediante URLs públicas o pre-firmadas, además de su capacidad para escalar automáticamente según el tráfico. Este servicio es esencial para garantizar baja latencia, alta disponibilidad y copias de seguridad confiables, optimizando el rendimiento y la experiencia del usuario en proyectos distribuidos."
+    },
+    "tech6": {
+      "title": "JWT (JSON Web Tokens)",
+      "description": "Utilizo JSON Web Tokens (JWT) para autenticación y autorización seguras en el backend de este proyecto, implementado con Java Spring Boot. El JWT es un estándar abierto que encapsula información del usuario en un token firmado digitalmente, compuesto por header, payload y signature, garantizando integridad y autenticidad. Tras el inicio de sesión, el token se genera y se envía al cliente, que lo usa en solicitudes posteriores mediante el encabezado Authorization. Su importancia en sitios robustos radica en su statelessness, permitiendo escalabilidad horizontal sin almacenamiento de sesiones en el servidor, además de soportar validación eficiente y protección contra ataques como CSRF y XSS cuando está bien configurado."
+    },
+    "tech7": {
+      "title": "Zustand (Gestión de Estado)",
+      "description": "Zustand es una biblioteca ligera de gestión de estado que utilizo en el frontend de este sitio, construido con Next.js. A diferencia de soluciones más pesadas como Redux, Zustand ofrece una API minimalista y reactiva, basada en hooks, para gestionar estados globales como idioma y temas. En este proyecto, implementé el control de traducciones con Zustand, permitiendo actualizaciones en tiempo real sin re-renderizaciones innecesarias. Su importancia para sitios robustos está en su simplicidad, rendimiento optimizado (evitando boilerplate) y escalabilidad, siendo ideal para aplicaciones modernas que requieren una gestión de estado eficiente y fácil de mantener."
+    },
+    "tech8": {
+      "title": "OpenID (Autenticación Descentralizada)",
+      "description": "OpenID es un protocolo de autenticación descentralizado que integré en este proyecto para ofrecer un inicio de sesión seguro mediante proveedores de identidad externos, como Google o Auth0. Basado en OAuth 2.0, OpenID Connect añade una capa de identidad al flujo de autorización, devolviendo un ID Token que autentica al usuario. En el backend de Spring Boot, configuré el soporte para OpenID para validar tokens y gestionar sesiones, reduciendo la necesidad de un sistema de inicio de sesión local. Su importancia en sitios robustos radica en la seguridad mejorada, la interoperabilidad con servicios populares y la experiencia del usuario, permitiendo una autenticación rápida y confiable sin gestión directa de contraseñas."
     }
   },
   "Form": {
