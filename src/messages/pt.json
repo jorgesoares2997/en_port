@@ -94,13 +94,13 @@
 
   "ToolsAndTechs": {
     "title": "Ferramentas e Tecnologias",
+    "flagsLabel": "Escolha o idioma:",
     "tech1": {
-      "title": "Java Spring Boot",
-      "description": "Utilizo Spring Boot para criar APIs RESTful robustas e seguras, integrando funcionalidades como autenticação JWT, envio de emails com JavaMail e segurança com Spring Security."
-    },
-    "tech2": {
-      "title": "Next.js e React",
-      "description": "Desenvolvo interfaces dinâmicas e responsivas com Next.js e React, aproveitando o poder do SSR e CSR para uma experiência de usuário otimizada."
+      "title": "JavaMail",
+      "description": "Utilizo JavaMail para enviar emails diretamente de aplicações Java, configurando servidores SMTP para comunicação eficiente, como demonstrado nesta API simples sem autenticação."
+    },"tech2": {
+      "title": "Intl (JavaScript)",
+      "description": "O `Intl` é uma API nativa do JavaScript que oferece ferramentas poderosas para internacionalização (i18n), permitindo a formatação de datas, números e strings de acordo com diferentes idiomas e regiões. Utilizo o `Intl` para criar experiências multilíngues consistentes, como formatar valores monetários (ex.: `Intl.NumberFormat`), datas (ex.: `Intl.DateTimeFormat`) e comparações de strings sensíveis à localidade (ex.: `Intl.Collator`). Nesta aplicação, o `Intl` poderia ser usado para complementar o sistema de tradução manual, garantindo que elementos dinâmicos, como datas ou preços, sejam exibidos corretamente para cada idioma (português, inglês e espanhol). É uma solução leve e integrada, eliminando a necessidade de bibliotecas externas para tarefas comuns de i18n."
     },
     "tech3": {
       "title": "Docker",
@@ -110,5 +110,14 @@
       "title": "TypeScript e Tailwind CSS",
       "description": "Uso TypeScript para tipagem segura e Tailwind CSS para estilização rápida e moderna, criando interfaces elegantes e funcionais."
     }
+  },"Form": {
+    "toPlaceholder": "Destinatário",
+    "subjectPlaceholder": "Assunto",
+    "bodyPlaceholder": "Mensagem",
+    "submitButton": "Enviar Email",
+    "invalidEmail": "Por favor, insira um email válido.",
+    "sending": "Enviando...",
+    "success": "Email enviado com sucesso!",
+    "error": "Erro ao enviar email: "
   }
 }

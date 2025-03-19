@@ -90,16 +90,16 @@
     },
     "and": " y "
   },
-
   "ToolsAndTechs": {
     "title": "Herramientas y Tecnologías",
+    "flagsLabel": "Elige el idioma:",
     "tech1": {
-      "title": "Java Spring Boot",
-      "description": "Utilizo Spring Boot para crear APIs RESTful robustas y seguras, integrando funcionalidades como autenticación JWT, envío de correos con JavaMail y seguridad con Spring Security."
+      "title": "JavaMail",
+      "description": "Utilizo JavaMail para enviar correos directamente desde aplicaciones Java, configurando servidores SMTP para una comunicación eficiente, como se muestra en esta API simple sin autenticación."
     },
     "tech2": {
-      "title": "Next.js y React",
-      "description": "Desarrollo interfaces dinámicas y responsivas con Next.js y React, aprovechando SSR y CSR para una experiencia de usuario optimizada."
+      "title": "Intl (JavaScript)",
+      "description": "La API `Intl` es un conjunto de herramientas nativas de JavaScript que proporciona capacidades potentes para internacionalización (i18n), permitiendo formatear fechas, números y cadenas según diferentes idiomas y regiones. Utilizo `Intl` para crear experiencias multilingües consistentes, como formatear valores monetarios (ej.: `Intl.NumberFormat`), fechas (ej.: `Intl.DateTimeFormat`) y comparaciones de cadenas sensibles a la localidad (ej.: `Intl.Collator`). En esta aplicación, `Intl` podría complementar el sistema de traducción manual, asegurando que elementos dinámicos como fechas o precios se muestren correctamente para cada idioma (portugués, inglés y español). Es una solución ligera e integrada que elimina la necesidad de bibliotecas externas para tareas comunes de i18n."
     },
     "tech3": {
       "title": "Docker",
@@ -109,5 +109,15 @@
       "title": "TypeScript y Tailwind CSS",
       "description": "Uso TypeScript para tipado seguro y Tailwind CSS para un estilizado rápido y moderno, creando interfaces elegantes y funcionales."
     }
+  },
+  "Form": {
+    "toPlaceholder": "Destinatario",
+    "subjectPlaceholder": "Asunto",
+    "bodyPlaceholder": "Mensaje",
+    "submitButton": "Enviar Email",
+    "invalidEmail": "Por favor, ingrese un email válido.",
+    "sending": "Enviando...",
+    "success": "¡Email enviado con éxito!",
+    "error": "Error al enviar email: "
   }
 }

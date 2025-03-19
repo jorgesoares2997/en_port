@@ -90,16 +90,16 @@
     },
     "and": " and "
   },
-
   "ToolsAndTechs": {
     "title": "Tools and Technologies",
+    "flagsLabel": "Choose language:",
     "tech1": {
-      "title": "Java Spring Boot",
-      "description": "I use Spring Boot to build robust and secure RESTful APIs, integrating features like JWT authentication, email sending with JavaMail, and security with Spring Security."
+      "title": "JavaMail",
+      "description": "I use JavaMail to send emails directly from Java applications, configuring SMTP servers for efficient communication, as showcased in this simple unauthenticated API."
     },
     "tech2": {
-      "title": "Next.js and React",
-      "description": "I develop dynamic and responsive interfaces with Next.js and React, leveraging SSR and CSR for an optimized user experience."
+      "title": "Intl (JavaScript)",
+      "description": "The `Intl` API is a native JavaScript toolset that provides powerful internationalization (i18n) capabilities, enabling the formatting of dates, numbers, and strings based on different languages and regions. I leverage `Intl` to build consistent multilingual experiences, such as formatting currency values (e.g., `Intl.NumberFormat`), dates (e.g., `Intl.DateTimeFormat`), and locale-sensitive string comparisons (e.g., `Intl.Collator`). In this application, `Intl` could complement the manual translation system, ensuring dynamic elements like dates or prices are displayed correctly for each language (Portuguese, English, and Spanish). It’s a lightweight, built-in solution that eliminates the need for external libraries for common i18n tasks."
     },
     "tech3": {
       "title": "Docker",
@@ -109,5 +109,14 @@
       "title": "TypeScript and Tailwind CSS",
       "description": "I use TypeScript for safe typing and Tailwind CSS for fast, modern styling, creating sleek and functional interfaces."
     }
+  },"Form": {
+    "toPlaceholder": "Recipient",
+    "subjectPlaceholder": "Subject",
+    "bodyPlaceholder": "Message",
+    "submitButton": "Send Email",
+    "invalidEmail": "Please enter a valid email.",
+    "sending": "Sending...",
+    "success": "Email sent successfully!",
+    "error": "Error sending email: "
   }
 }

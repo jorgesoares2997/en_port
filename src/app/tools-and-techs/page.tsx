@@ -6,7 +6,9 @@ import SectionRightText from "@/components/SectionRightText";
 interface Tech {
   title: string;
   description: string;
-  videoUrl: string;
+  videoUrl?: string;
+  form?: boolean;
+  flags?: boolean; // Novo prop para bandeiras
 }
 
 export default function ToolsAndTechs() {
@@ -16,12 +18,12 @@ export default function ToolsAndTechs() {
     {
       title: t("ToolsAndTechs.tech1.title"),
       description: t("ToolsAndTechs.tech1.description"),
-      videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4", // Substitua por vídeos reais
+      form: true,
     },
     {
       title: t("ToolsAndTechs.tech2.title"),
       description: t("ToolsAndTechs.tech2.description"),
-      videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
+      flags: true, // Ativa as bandeiras na seção Intl
     },
     {
       title: t("ToolsAndTechs.tech3.title"),
@@ -34,7 +36,6 @@ export default function ToolsAndTechs() {
       videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
     },
   ];
-
   const bgColors = [
     "bg-dark-blue/60",
     "bg-neon-pink/60",
@@ -55,6 +56,7 @@ export default function ToolsAndTechs() {
             description={tech.description}
             videoUrl={tech.videoUrl}
             bgColor={bgColors[index]}
+            form={tech.form}
           />
         ) : (
           <SectionRightText
@@ -63,6 +65,7 @@ export default function ToolsAndTechs() {
             description={tech.description}
             videoUrl={tech.videoUrl}
             bgColor={bgColors[index]}
+            flags={tech.flags}
           />
         )
       )}
