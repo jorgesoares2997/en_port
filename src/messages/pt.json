@@ -114,7 +114,7 @@
   },
   "Form": {
     "toPlaceholder": "Destinatário",
-    "subjectPlaceholder": "Assunto",
+    "subjectPlaceholder": "Assunto", 
     "bodyPlaceholder": "Mensagem",
     "submitButton": "Enviar Email",
     "invalidEmail": "Por favor, insira um email válido.",

@@ -1,12 +1,15 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useTranslationStore } from "@/stores/translationStore";
+import { motion } from "framer-motion";
+import { FaArrowUp } from "react-icons/fa6"; // Ícone de seta para cima
 
 export default function Navbar() {
   const { t, locale, setLocale } = useTranslationStore();
   const [isOpen, setIsOpen] = useState(false); // Para o seletor de idiomas
   const [isMobileOpen, setIsMobileOpen] = useState(false); // Para o menu mobile
+  const [isScrolled, setIsScrolled] = useState(false); // Para controlar visibilidade do botão
 
   const flags: { [key: string]: string } = {
     pt: "🇧🇷",
@@ -28,14 +31,40 @@ export default function Navbar() {
     { href: "/contact", label: t("Navbar.contact") },
   ];
 
+  // Detectar scroll para mostrar/esconder o botão
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) { // Aparece após rolar 100px
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll); // Limpeza
+  }, []);
+
+  // Função para rolar suavemente para o topo
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <nav className="fixed top-0 w-full bg-dark-blue/80 backdrop-blur-md z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <Link href="/" className="text-2xl font-bold text-neon-green">
-
-            </Link>
+            <motion.button
+              onClick={scrollToTop}
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: isScrolled ? 1 : 0, y: isScrolled ? 0 : -20 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="text-neon-green hover:text-neon-pink transition-colors focus:outline-none"
+              aria-label="Scroll to top"
+            >
+              <FaArrowUp size={24} />
+            </motion.button>
           </div>
           {/* Links Desktop */}
           <div className="hidden md:flex items-center space-x-8">
