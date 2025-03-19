@@ -2,6 +2,7 @@
 import { useTranslationStore } from "@/stores/translationStore";
 import { useState } from "react";
 import axios, { AxiosError } from "axios";
+import { FaArrowAltCircleRight } from "react-icons/fa";
 
 interface SectionProps {
   title: string;
@@ -10,6 +11,7 @@ interface SectionProps {
   imageUrl?: string; // Novo prop para imagem estática
   bgColor: string;
   form?: boolean;
+  link?: string;
 }
 
 export default function SectionLeftText({
@@ -19,6 +21,7 @@ export default function SectionLeftText({
   imageUrl,
   bgColor,
   form = false,
+  link,
 }: SectionProps) {
   const { t } = useTranslationStore();
   const [formData, setFormData] = useState({ to: "", subject: "", body: "" });
@@ -65,6 +68,9 @@ export default function SectionLeftText({
         <div className="text-neon-blue">
           <h2 className="text-4xl font-bold text-neon-green mb-4">{title}</h2>
           <p className="text-lg">{description}</p>
+          <a href={link} target="_blank">
+            <FaArrowAltCircleRight />
+          </a>
         </div>
         <div>
           {form ? (

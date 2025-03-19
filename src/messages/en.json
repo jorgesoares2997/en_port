@@ -31,6 +31,10 @@
     "project1": {
       "title": "Weather App",
       "description": "The Weather App is a web application that allows users to check real-time weather for any city worldwide, using the OpenWeatherMap API for climate data and the Unsplash API for dynamic background images. Built with Next.js and TypeScript, it consumes external APIs via Axios, displaying details like temperature, humidity, wind speed, and weather description, alongside the country’s flag (via FlagsAPI). The design is responsive, styled with Tailwind CSS, and provides an immersive visual experience with images reflecting the searched city."
+    },
+    "project2": {
+      "title": "Purchase Order Management System",
+      "description": "The Purchase Order Management System is a backend application built with Java Spring Boot, designed to manage purchase orders through CRUD (Create, Read, Update, Delete) operations. Leveraging a RESTful architecture, it exposes endpoints to register, retrieve, update, and delete orders, integrating with a relational database via Spring Data JPA with Hibernate. I implemented robust validations using Bean Validation, efficient object-relational mapping (ORM), and transactional control to ensure data integrity. The API follows design patterns like DTOs (Data Transfer Objects) for encapsulation and security, providing a scalable foundation for e-commerce or ERP systems."
     }
   },
   "Contact": {
