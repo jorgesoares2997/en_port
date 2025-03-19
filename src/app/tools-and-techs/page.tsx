@@ -31,11 +31,11 @@ export default function ToolsAndTechs() {
       description: t("ToolsAndTechs.tech3.description"),
       imageUrl: "/docker.webp", // Imagem em public/
     },
-    {
-      title: t("ToolsAndTechs.tech4.title"),
-      description: t("ToolsAndTechs.tech4.description"),
-      videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
-    },
+    // {
+    //   title: t("ToolsAndTechs.tech4.title"),
+    //   description: t("ToolsAndTechs.tech4.description"),
+    //   videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
+    // },
   ];
   const bgColors = [
     "bg-dark-blue/60",
