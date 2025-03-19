@@ -7,9 +7,10 @@ interface Tech {
   title: string;
   description: string;
   videoUrl?: string;
-  imageUrl?: string; // Novo prop para imagem
+  imageUrl?: string;
   form?: boolean;
   flags?: boolean;
+  weatherDemo?: boolean; // Novo prop para demo de clima
 }
 
 export default function ToolsAndTechs() {
@@ -29,13 +30,13 @@ export default function ToolsAndTechs() {
     {
       title: t("ToolsAndTechs.tech3.title"),
       description: t("ToolsAndTechs.tech3.description"),
-      imageUrl: "/docker.webp", // Imagem em public/
+      imageUrl: "/docker.webp",
     },
-    // {
-    //   title: t("ToolsAndTechs.tech4.title"),
-    //   description: t("ToolsAndTechs.tech4.description"),
-    //   videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
-    // },
+    {
+      title: t("ToolsAndTechs.tech4.title"),
+      description: t("ToolsAndTechs.tech4.description"),
+      weatherDemo: true, // Ativa o demo de clima
+    },
   ];
   const bgColors = [
     "bg-dark-blue/60",
@@ -68,6 +69,7 @@ export default function ToolsAndTechs() {
             videoUrl={tech.videoUrl}
             bgColor={bgColors[index]}
             flags={tech.flags}
+            weatherDemo={tech.weatherDemo}
           />
         )
       )}

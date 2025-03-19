@@ -6,6 +6,8 @@ interface Translations {
     home: string;
     about: string;
     projects: string;
+    toolsAndTechs: string;
+    contact: string;
   };
   Home: {
     title: string;
@@ -13,14 +15,32 @@ interface Translations {
     techStackTitle: string;
     techStackDescription: string;
     tech: {
-      nextjs: string;
+      javamail: string;
+      intl: string;
+      docker: string;
       typescript: string;
       tailwind: string;
-      zustand: string;
-      tsparticles: string;
     };
     contactPrompt: string;
     cta: string;
+  };
+  ToolsAndTechs: {
+    title: string;
+    flagsLabel: string;
+    tech1: { title: string; description: string };
+    tech2: { title: string; description: string };
+    tech3: { title: string; description: string };
+    tech4: { title: string; description: string };
+  };
+  Form: {
+    toPlaceholder: string;
+    subjectPlaceholder: string;
+    bodyPlaceholder: string;
+    submitButton: string;
+    invalidEmail: string;
+    sending: string;
+    success: string;
+    error: string;
   };
   About: {
     title: string;
@@ -44,7 +64,7 @@ interface Translations {
     successMessage: string;
     errorMessage: string;
     loginToWhatsApp: string;
-    techDescription: string; // Certifique-se de que essa chave está presente no JSON
+    techDescription: string;
   };
   Footer: {
     about: string;

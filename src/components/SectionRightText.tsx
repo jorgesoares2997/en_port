@@ -1,5 +1,6 @@
 "use client";
 import { useTranslationStore } from "@/stores/translationStore";
+import WeatherMini from "./WeatherMini";
 
 interface SectionProps {
   title: string;
@@ -7,9 +8,10 @@ interface SectionProps {
   videoUrl?: string;
   bgColor: string;
   flags?: boolean;
+  weatherDemo?: boolean;
 }
 
-export default function SectionRightText({ title, description, videoUrl, bgColor, flags = false }: SectionProps) {
+export default function SectionRightText({ title, description, videoUrl, bgColor, flags = false, weatherDemo = false }: SectionProps) {
   const { t, locale, setLocale } = useTranslationStore();
 
   const flagsMap: { [key: string]: string } = {
@@ -19,14 +21,19 @@ export default function SectionRightText({ title, description, videoUrl, bgColor
   };
 
   const handleFlagClick = (code: string) => {
-    setLocale(code); // Muda o idioma ao clicar na bandeira
+    setLocale(code);
   };
 
   return (
     <section className={`${bgColor} py-16`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         <div>
-          {flags ? (
+          {weatherDemo ? (
+            <WeatherMini
+              apiKey={process.env.NEXT_PUBLIC_API_KEY as string}
+              accessKey={process.env.NEXT_PUBLIC_ACCESS_KEY as string}
+            />
+          ) : flags ? (
             <div className="bg-neon-blue/10 p-6 rounded-lg flex flex-col items-center justify-center h-full">
               <p className="text-sm text-neon-blue/80 mb-4">{t("ToolsAndTechs.flagsLabel")}</p>
               <div className="flex space-x-6">
