@@ -49,6 +49,8 @@ export default function ToolsAndTechs() {
     {
       title: t("ToolsAndTechs.tech7.title"),
       description: t("ToolsAndTechs.tech7.description"),
+      imageUrl:
+        "https://port-bu.s3.eu-north-1.amazonaws.com/openart-image_Oknb0w7y_1742423087788_raw.jpg",
     },
     {
       title: t("ToolsAndTechs.tech8.title"),
