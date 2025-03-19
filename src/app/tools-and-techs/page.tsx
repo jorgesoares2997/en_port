@@ -7,8 +7,9 @@ interface Tech {
   title: string;
   description: string;
   videoUrl?: string;
+  imageUrl?: string; // Novo prop para imagem
   form?: boolean;
-  flags?: boolean; // Novo prop para bandeiras
+  flags?: boolean;
 }
 
 export default function ToolsAndTechs() {
@@ -23,12 +24,12 @@ export default function ToolsAndTechs() {
     {
       title: t("ToolsAndTechs.tech2.title"),
       description: t("ToolsAndTechs.tech2.description"),
-      flags: true, // Ativa as bandeiras na seção Intl
+      flags: true,
     },
     {
       title: t("ToolsAndTechs.tech3.title"),
       description: t("ToolsAndTechs.tech3.description"),
-      videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
+      imageUrl: "/docker.webp", // Imagem em public/
     },
     {
       title: t("ToolsAndTechs.tech4.title"),
@@ -55,6 +56,7 @@ export default function ToolsAndTechs() {
             title={tech.title}
             description={tech.description}
             videoUrl={tech.videoUrl}
+            imageUrl={tech.imageUrl}
             bgColor={bgColors[index]}
             form={tech.form}
           />

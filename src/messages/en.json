@@ -102,8 +102,8 @@
       "description": "The `Intl` API is a native JavaScript toolset that provides powerful internationalization (i18n) capabilities, enabling the formatting of dates, numbers, and strings based on different languages and regions. I leverage `Intl` to build consistent multilingual experiences, such as formatting currency values (e.g., `Intl.NumberFormat`), dates (e.g., `Intl.DateTimeFormat`), and locale-sensitive string comparisons (e.g., `Intl.Collator`). In this application, `Intl` could complement the manual translation system, ensuring dynamic elements like dates or prices are displayed correctly for each language (Portuguese, English, and Spanish). It’s a lightweight, built-in solution that eliminates the need for external libraries for common i18n tasks."
     },
     "tech3": {
-      "title": "Docker",
-      "description": "I containerize my applications with Docker and Docker Compose, ensuring consistent and scalable deployment across different environments."
+      "title": "Docker and Docker Compose",
+      "description": "Docker is a containerization platform I use to encapsulate applications and their dependencies into lightweight, portable containers, ensuring consistency across development, testing, and production environments. With Docker Compose, I orchestrate multiple containers effortlessly by defining services, networks, and volumes in a YAML file. For example, in this application, I could containerize the frontend (Next.js), backend (Spring Boot), and an SMTP service (like MailHog) in a single `docker-compose.yml`, enabling startup with one command (`docker-compose up`). This simplifies deployment on platforms like Render or locally, reducing configuration issues and enhancing scalability."
     },
     "tech4": {
       "title": "TypeScript and Tailwind CSS",

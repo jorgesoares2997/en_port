@@ -7,6 +7,7 @@ interface SectionProps {
   title: string;
   description: string;
   videoUrl?: string;
+  imageUrl?: string; // Novo prop para imagem estática
   bgColor: string;
   form?: boolean;
 }
@@ -15,10 +16,11 @@ export default function SectionLeftText({
   title,
   description,
   videoUrl,
+  imageUrl,
   bgColor,
   form = false,
 }: SectionProps) {
-  const { t } = useTranslationStore(); // Usar o hook corretamente
+  const { t } = useTranslationStore();
   const [formData, setFormData] = useState({ to: "", subject: "", body: "" });
   const [status, setStatus] = useState<string | null>(null);
 
@@ -32,10 +34,9 @@ export default function SectionLeftText({
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Validação de email
     if (!formData.to.includes("@") || !formData.to.includes(".")) {
       setStatus(t("Form.invalidEmail"));
-      setTimeout(() => setStatus(null), 3000); // Reset após 3 segundos
+      setTimeout(() => setStatus(null), 3000);
       return;
     }
 
@@ -48,7 +49,7 @@ export default function SectionLeftText({
       );
       setStatus(`${t("Form.success")}${response}`);
       setFormData({ to: "", subject: "", body: "" });
-      setTimeout(() => setStatus(null), 3000); // Reset automático após 3 segundos
+      setTimeout(() => setStatus(null), 3000);
     } catch (error) {
       const axiosError = error as AxiosError;
       setStatus(
@@ -120,14 +121,22 @@ export default function SectionLeftText({
                 </p>
               )}
             </form>
-          ) : (
-            <video
-              src={videoUrl}
-              autoPlay
-              loop
-              muted
-              className="w-full rounded-lg shadow-lg border border-neon-blue/20"
+          ) : imageUrl ? (
+            <img
+              src={imageUrl}
+              alt={title}
+              className="w-full rounded-lg shadow-lg border border-neon-blue/20 object-cover"
             />
+          ) : (
+            videoUrl && (
+              <video
+                src={videoUrl}
+                autoPlay
+                loop
+                muted
+                className="w-full rounded-lg shadow-lg border border-neon-blue/20"
+              />
+            )
           )}
         </div>
       </div>
