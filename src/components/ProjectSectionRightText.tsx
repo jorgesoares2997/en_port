@@ -3,6 +3,7 @@ interface ProjectSectionProps {
   description: string;
   videoUrl: string;
   bgColor: string;
+
 }
 
 export default function ProjectSectionRightText({
@@ -10,6 +11,7 @@ export default function ProjectSectionRightText({
   description,
   videoUrl,
   bgColor,
+
 }: ProjectSectionProps) {
   return (
     <section className={`${bgColor} py-16`}>
@@ -26,6 +28,7 @@ export default function ProjectSectionRightText({
         <div className="text-neon-blue">
           <h2 className="text-4xl font-bold text-neon-green mb-4">{title}</h2>
           <p className="text-lg">{description}</p>
+         
         </div>
       </div>
     </section>

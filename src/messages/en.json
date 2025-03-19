@@ -6,7 +6,7 @@
     "toolsAndTechs": "Tools and Techs",
     "contact": "Contact"
   },
- "Home": {
+  "Home": {
     "title": "Welcome to My Portfolio",
     "description": "A passionate developer crafting modern and efficient solutions. Explore my projects and favorite technologies!",
     "techStackTitle": "My Tech Stack",
@@ -26,8 +26,12 @@
     "description": "Our neon-charged story"
   },
   "Projects": {
-    "title": "Our Projects",
-    "description": "Electrifying works in progress"
+    "title": "My Projects",
+    "description": "Here are some of the projects I’ve developed, showcasing my skills and passions.",
+    "project1": {
+      "title": "Weather App",
+      "description": "The Weather App is a web application that allows users to check real-time weather for any city worldwide, using the OpenWeatherMap API for climate data and the Unsplash API for dynamic background images. Built with Next.js and TypeScript, it consumes external APIs via Axios, displaying details like temperature, humidity, wind speed, and weather description, alongside the country’s flag (via FlagsAPI). The design is responsive, styled with Tailwind CSS, and provides an immersive visual experience with images reflecting the searched city."
+    }
   },
   "Contact": {
     "title": "Contact",
@@ -109,7 +113,8 @@
       "title": "Axios (API Consumption)",
       "description": "Axios is a promise-based HTTP library I use to consume APIs efficiently and robustly in web applications. With support for GET, POST requests, and error handling, Axios simplifies integration with external services like OpenWeatherMap for weather data and Unsplash for dynamic images. In this project, I implemented asynchronous calls to fetch real-time data, handling JSON responses and dynamically updating the UI. The example beside demonstrates how Axios retrieves a city’s weather and a background image, showcasing its ease of use and flexibility."
     }
-  },"Form": {
+  },
+  "Form": {
     "toPlaceholder": "Recipient",
     "subjectPlaceholder": "Subject",
     "bodyPlaceholder": "Message",

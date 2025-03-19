@@ -26,8 +26,12 @@
     "description": "Nuestra historia cargada de neón"
   },
   "Projects": {
-    "title": "Nuestros Proyectos",
-    "description": "Trabajos electrizantes en progreso"
+    "title": "Mis Proyectos",
+    "description": "Aquí están algunos de los proyectos que he desarrollado, mostrando mis habilidades y pasiones.",
+    "project1": {
+      "title": "Weather App",
+      "description": "La Weather App es una aplicación web que permite a los usuarios consultar el clima en tiempo real de cualquier ciudad del mundo, utilizando la API OpenWeatherMap para datos climáticos y la API Unsplash para imágenes dinámicas de fondo. Desarrollada con Next.js y TypeScript, la aplicación consume APIs externas vía Axios, mostrando detalles como temperatura, humedad, velocidad del viento y descripción del clima, junto a la bandera del país correspondiente (vía FlagsAPI). El diseño es responsivo, estilizado con Tailwind CSS, y ofrece una experiencia visual inmersiva con imágenes que reflejan la ciudad buscada."
+    }
   },
   "Contact": {
     "title": "Contacto",

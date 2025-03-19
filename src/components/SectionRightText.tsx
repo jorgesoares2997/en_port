@@ -1,6 +1,7 @@
 "use client";
 import { useTranslationStore } from "@/stores/translationStore";
 import WeatherMini from "./WeatherMini";
+import { FaArrowAltCircleRight } from "react-icons/fa";
 
 interface SectionProps {
   title: string;
@@ -9,9 +10,18 @@ interface SectionProps {
   bgColor: string;
   flags?: boolean;
   weatherDemo?: boolean;
+  link?: string;
 }
 
-export default function SectionRightText({ title, description, videoUrl, bgColor, flags = false, weatherDemo = false }: SectionProps) {
+export default function SectionRightText({
+  title,
+  description,
+  videoUrl,
+  bgColor,
+  flags = false,
+  weatherDemo = false,
+  link,
+}: SectionProps) {
   const { t, locale, setLocale } = useTranslationStore();
 
   const flagsMap: { [key: string]: string } = {
@@ -35,14 +45,18 @@ export default function SectionRightText({ title, description, videoUrl, bgColor
             />
           ) : flags ? (
             <div className="bg-neon-blue/10 p-6 rounded-lg flex flex-col items-center justify-center h-full">
-              <p className="text-sm text-neon-blue/80 mb-4">{t("ToolsAndTechs.flagsLabel")}</p>
+              <p className="text-sm text-neon-blue/80 mb-4">
+                {t("ToolsAndTechs.flagsLabel")}
+              </p>
               <div className="flex space-x-6">
                 {Object.entries(flagsMap).map(([code, flag]) => (
                   <button
                     key={code}
                     onClick={() => handleFlagClick(code)}
                     className={`text-3xl transition-opacity duration-300 ${
-                      locale === code ? "opacity-100" : "opacity-50 hover:opacity-75"
+                      locale === code
+                        ? "opacity-100"
+                        : "opacity-50 hover:opacity-75"
                     }`}
                   >
                     {flag}
@@ -63,6 +77,9 @@ export default function SectionRightText({ title, description, videoUrl, bgColor
         <div className="text-neon-blue">
           <h2 className="text-4xl font-bold text-neon-green mb-4">{title}</h2>
           <p className="text-lg">{description}</p>
+          <a href={link}>
+            <FaArrowAltCircleRight />
+          </a>
         </div>
       </div>
     </section>
