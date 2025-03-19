@@ -6,20 +6,20 @@
     "toolsAndTechs": "Tools and Techs",
     "contact": "Contact"
   },
-  "Home": {
-    "title": "Tech Portfolio",
-    "description": "Welcome to my tech portfolio! Discover innovative solutions for your business.",
-    "techStackTitle": "Technologies Used",
-    "techStackDescription": "I built this portfolio with cutting-edge tools to deliver top performance and design:",
+ "Home": {
+    "title": "Welcome to My Portfolio",
+    "description": "A passionate developer crafting modern and efficient solutions. Explore my projects and favorite technologies!",
+    "techStackTitle": "My Tech Stack",
+    "techStackDescription": "Here are some of the tools I use to build amazing applications:",
     "tech": {
-      "nextjs": "React framework for server-side rendering and fast, scalable websites.",
-      "typescript": "Static typing for robust, error-free code.",
-      "tailwind": "Fast and responsive styling with utility-first CSS.",
-      "zustand": "Lightweight and efficient state management for a seamless experience.",
-      "tsparticles": "Particle animations for a futuristic and interactive look."
+      "javamail": "I send emails directly from Java applications using JavaMail, configuring SMTP servers for efficient communication.",
+      "intl": "I use the Intl JavaScript API for internationalization, formatting dates, numbers, and strings in a multilingual way.",
+      "docker": "I containerize applications with Docker and Docker Compose, ensuring consistency and scalability across environments.",
+      "typescript": "I write safe, typed code with TypeScript, enhancing application robustness.",
+      "tailwind": "I style interfaces quickly with Tailwind CSS, creating modern and responsive designs."
     },
-    "contactPrompt": "Need this for your business? Don’t hesitate to reach out!",
-    "cta": "Check Out My Projects"
+    "contactPrompt": "Learn more in the Tools and Techs section!",
+    "cta": "View My Projects"
   },
   "About": {
     "title": "About Us",

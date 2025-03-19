@@ -1,4 +1,3 @@
-// src/app/page.tsx
 "use client";
 import Link from "next/link";
 import { useTranslationStore } from "@/stores/translationStore";
@@ -26,62 +25,70 @@ export default function Home() {
           {t("Home.techStackDescription")}
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {/* Tecnologia 1: Next.js */}
+          {/* Tecnologia 1: JavaMail */}
           <motion.div className="group bg-dark-bg p-4 rounded-md hover:bg-neon-blue/10 transition-all duration-300">
             <h3 className="text-xl font-bold text-neon-green group-hover:text-neon-pink">
-              Next.js
+              JavaMail
             </h3>
-            <p className="text-neon-blue text-sm">{t("Home.tech.nextjs")}</p>
-            <p className="text-neon-blue text-sm mt-2 italic">
+            <p className="text-neon-blue text-sm">{t("Home.tech.javamail")}</p>
+            <Link
+              href="/tools-and-techs"
+              className="text-neon-blue text-sm mt-2 italic hover:text-neon-pink"
+            >
               {t("Home.contactPrompt")}
-            </p>
+            </Link>
           </motion.div>
 
-          {/* Tecnologia 2: TypeScript */}
+          {/* Tecnologia 2: Intl */}
+          <motion.div className="group bg-dark-bg p-4 rounded-md hover:bg-neon-blue/10 transition-all duration-300">
+            <h3 className="text-xl font-bold text-neon-green group-hover:text-neon-pink">
+              Intl
+            </h3>
+            <p className="text-neon-blue text-sm">{t("Home.tech.intl")}</p>
+            <Link
+              href="/tools-and-techs"
+              className="text-neon-blue text-sm mt-2 italic hover:text-neon-pink"
+            >
+              {t("Home.contactPrompt")}
+            </Link>
+          </motion.div>
+
+          {/* Tecnologia 3: Docker */}
+          <motion.div className="group bg-dark-bg p-4 rounded-md hover:bg-neon-blue/10 transition-all duration-300">
+            <h3 className="text-xl font-bold text-neon-green group-hover:text-neon-pink">
+              Docker
+            </h3>
+            <p className="text-neon-blue text-sm">{t("Home.tech.docker")}</p>
+            <Link
+              href="/tools-and-techs"
+              className="text-neon-blue text-sm mt-2 italic hover:text-neon-pink"
+            >
+              {t("Home.contactPrompt")}
+            </Link>
+          </motion.div>
+
+          {/* Tecnologia 4: TypeScript */}
           <motion.div className="group bg-dark-bg p-4 rounded-md hover:bg-neon-blue/10 transition-all duration-300">
             <h3 className="text-xl font-bold text-neon-green group-hover:text-neon-pink">
               TypeScript
             </h3>
-            <p className="text-neon-blue text-sm">
-              {t("Home.tech.typescript")}
-            </p>
-            <p className="text-neon-blue text-sm mt-2 italic">
+            <p className="text-neon-blue text-sm">{t("Home.tech.typescript")}</p>
+            <Link
+              href="/tools-and-techs"
+              className="text-neon-blue text-sm mt-2 italic hover:text-neon-pink"
+            >
               {t("Home.contactPrompt")}
-            </p>
+            </Link>
           </motion.div>
 
-          {/* Tecnologia 3: Tailwind CSS */}
+          {/* Tecnologia 5: Tailwind CSS */}
           <motion.div className="group bg-dark-bg p-4 rounded-md hover:bg-neon-blue/10 transition-all duration-300">
             <h3 className="text-xl font-bold text-neon-green group-hover:text-neon-pink">
               Tailwind CSS
             </h3>
             <p className="text-neon-blue text-sm">{t("Home.tech.tailwind")}</p>
-            <p className="text-neon-blue text-sm mt-2 italic">
-              {t("Home.contactPrompt")}
-            </p>
-          </motion.div>
-
-          {/* Tecnologia 4: Zustand */}
-          <motion.div className="group bg-dark-bg p-4 rounded-md hover:bg-neon-blue/10 transition-all duration-300">
-            <h3 className="text-xl font-bold text-neon-green group-hover:text-neon-pink">
-              Zustand
-            </h3>
-            <p className="text-neon-blue text-sm">{t("Home.tech.zustand")}</p>
-            <p className="text-neon-blue text-sm mt-2 italic">
-              {t("Home.contactPrompt")}
-            </p>
-          </motion.div>
-
-          {/* Tecnologia 5: tsParticles */}
-          <motion.div className="group bg-dark-bg p-4 rounded-md hover:bg-neon-blue/10 transition-all duration-300">
-            <h3 className="text-xl font-bold text-neon-green group-hover:text-neon-pink">
-              tsParticles
-            </h3>
-            <p className="text-neon-blue text-sm">
-              {t("Home.tech.tsparticles")}
-            </p>
             <Link
-              href="/contact"
+              href="/tools-and-techs"
               className="text-neon-blue text-sm mt-2 italic hover:text-neon-pink"
             >
               {t("Home.contactPrompt")}

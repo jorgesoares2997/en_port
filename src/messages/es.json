@@ -7,19 +7,19 @@
     "contact": "Contacto"
   },
   "Home": {
-    "title": "Portafolio Tech",
-    "description": "¡Bienvenido a mi portafolio tech! Encuentra soluciones innovadoras para tu negocio.",
-    "techStackTitle": "Tecnologías Utilizadas",
-    "techStackDescription": "Construí este portafolio con herramientas modernas para ofrecer lo mejor en rendimiento y diseño:",
+    "title": "Bienvenido a Mi Portafolio",
+    "description": "Desarrollador apasionado por crear soluciones modernas y eficientes. ¡Explora mis proyectos y tecnologías favoritas!",
+    "techStackTitle": "Mis Tecnologías",
+    "techStackDescription": "Estas son algunas de las herramientas que utilizo para construir aplicaciones increíbles:",
     "tech": {
-      "nextjs": "Framework de React para renderización del lado del servidor y sitios rápidos y escalables.",
-      "typescript": "Tipado estático para un código robusto y sin errores.",
-      "tailwind": "Estilización rápida y responsiva con CSS utilitario.",
-      "zustand": "Gestión de estado ligera y eficiente para una experiencia fluida.",
-      "tsparticles": "Animaciones de partículas para un look futurista e interactivo."
+      "javamail": "Envío correos directamente desde aplicaciones Java con JavaMail, configurando servidores SMTP para una comunicación eficiente.",
+      "intl": "Uso la API Intl de JavaScript para internacionalización, formateando fechas, números y cadenas de manera multilingüe.",
+      "docker": "Contenerizo aplicaciones con Docker y Docker Compose, asegurando consistencia y escalabilidad en diferentes entornos.",
+      "typescript": "Escribo código seguro y tipado con TypeScript, aumentando la robustez de las aplicaciones.",
+      "tailwind": "Estilizo interfaces rápidamente con Tailwind CSS, creando diseños modernos y responsivos."
     },
-    "contactPrompt": "¿Necesitas esto en tu negocio? ¡No dudes en contactarme!",
-    "cta": "Mira Mis Proyectos"
+    "contactPrompt": "¡Conoce más en la sección Tools and Techs!",
+    "cta": "Ver Mis Proyectos"
   },
   "About": {
     "title": "Sobre Nosotros",
@@ -50,7 +50,7 @@
     "description": "Un proyecto Next.js futurista con vibras neón",
     "links": "Enlaces",
     "contact": "Contacto",
-"email": "jorgesoares2997@gmail.com",
+    "email": "jorgesoares2997@gmail.com",
     "rights": "© 2025 Todos los derechos reservados"
   },
 

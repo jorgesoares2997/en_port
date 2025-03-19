@@ -8,18 +8,18 @@
   },
 
   "Home": {
-    "title": "Portfólio Tech",
-    "description": "Bem-vindo ao meu portfólio tech! Aqui você encontra soluções inovadoras para o seu negócio.",
-    "techStackTitle": "Tecnologias Utilizadas",
-    "techStackDescription": "Construí este portfólio com ferramentas modernas para oferecer o melhor em desempenho e design:",
+    "title": "Bem-vindo ao Meu Portfólio",
+    "description": "Desenvolvedor apaixonado por criar soluções modernas e eficientes. Explore meus projetos e tecnologias favoritas!",
+    "techStackTitle": "Minhas Tecnologias",
+    "techStackDescription": "Aqui estão algumas das ferramentas que utilizo para construir aplicações incríveis:",
     "tech": {
-      "nextjs": "Framework React para renderização server-side e sites rápidos e escaláveis.",
-      "typescript": "Tipagem estática para um código robusto e sem erros.",
-      "tailwind": "Estilização rápida e responsiva com CSS utilitário.",
-      "zustand": "Gerenciamento de estado leve e eficiente para uma experiência fluida.",
-      "tsparticles": "Animações de partículas para um visual futurista e interativo."
+      "javamail": "Envio emails diretamente de aplicações Java com JavaMail, configurando servidores SMTP para comunicação eficiente.",
+      "intl": "Uso a API Intl do JavaScript para internacionalização, formatando datas, números e strings de forma multilíngue.",
+      "docker": "Containerizo aplicações com Docker e Docker Compose, garantindo consistência e escalabilidade em diferentes ambientes.",
+      "typescript": "Escrevo código seguro e tipado com TypeScript, aumentando a robustez das aplicações.",
+      "tailwind": "Estilizo interfaces rapidamente com Tailwind CSS, criando designs modernos e responsivos."
     },
-    "contactPrompt": "Precisa disso no seu negócio? Fale comigo!",
+    "contactPrompt": "Saiba mais na seção Tools and Techs!",
     "cta": "Veja Meus Projetos"
   },
   "About": {
@@ -36,7 +36,7 @@
     "description": "Um projeto Next.js futurista com vibes neon",
     "links": "Links",
     "contact": "Contato",
-"email": "jorgesoares2997@gmail.com",
+    "email": "jorgesoares2997@gmail.com",
     "rights": "© 2025 Todos os direitos reservados"
   },
   "Contact": {
@@ -98,7 +98,8 @@
     "tech1": {
       "title": "JavaMail",
       "description": "Utilizo JavaMail para enviar emails diretamente de aplicações Java, configurando servidores SMTP para comunicação eficiente, como demonstrado nesta API simples sem autenticação."
-    },"tech2": {
+    },
+    "tech2": {
       "title": "Intl (JavaScript)",
       "description": "O `Intl` é uma API nativa do JavaScript que oferece ferramentas poderosas para internacionalização (i18n), permitindo a formatação de datas, números e strings de acordo com diferentes idiomas e regiões. Utilizo o `Intl` para criar experiências multilíngues consistentes, como formatar valores monetários (ex.: `Intl.NumberFormat`), datas (ex.: `Intl.DateTimeFormat`) e comparações de strings sensíveis à localidade (ex.: `Intl.Collator`). Nesta aplicação, o `Intl` poderia ser usado para complementar o sistema de tradução manual, garantindo que elementos dinâmicos, como datas ou preços, sejam exibidos corretamente para cada idioma (português, inglês e espanhol). É uma solução leve e integrada, eliminando a necessidade de bibliotecas externas para tarefas comuns de i18n."
     },
@@ -110,7 +111,8 @@
       "title": "TypeScript e Tailwind CSS",
       "description": "Uso TypeScript para tipagem segura e Tailwind CSS para estilização rápida e moderna, criando interfaces elegantes e funcionais."
     }
-  },"Form": {
+  },
+  "Form": {
     "toPlaceholder": "Destinatário",
     "subjectPlaceholder": "Assunto",
     "bodyPlaceholder": "Mensagem",
