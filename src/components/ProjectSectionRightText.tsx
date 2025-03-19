@@ -28,6 +28,7 @@ export default function ProjectSectionRightText({
         <div className="text-neon-blue">
           <h2 className="text-4xl font-bold text-neon-green mb-4">{title}</h2>
           <p className="text-lg">{description}</p>
+
          
         </div>
       </div>

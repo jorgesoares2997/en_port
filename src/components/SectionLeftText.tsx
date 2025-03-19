@@ -68,9 +68,11 @@ export default function SectionLeftText({
         <div className="text-neon-blue">
           <h2 className="text-4xl font-bold text-neon-green mb-4">{title}</h2>
           <p className="text-lg">{description}</p>
-          <a href={link} target="_blank">
-            <FaArrowAltCircleRight />
-          </a>
+          {link ? (
+            <a href={link} target="_blank">
+              <FaArrowAltCircleRight />
+            </a>
+          ) : null}
         </div>
         <div>
           {form ? (

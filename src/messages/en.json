@@ -103,7 +103,7 @@
     "flagsLabel": "Choose language:",
     "tech1": {
       "title": "JavaMail",
-      "description": "I use JavaMail to send emails directly from Java applications, configuring SMTP servers for efficient communication, as showcased in this simple unauthenticated API."
+      "description": "JavaMail is a widely used API for sending and receiving emails in Java applications. It enables the configuration of SMTP, POP, and IMAP servers, ensuring efficient and secure communication. Major companies such as Oracle, IBM, and Red Hat use JavaMail-based solutions to manage corporate email systems and automated notifications."
     },
     "tech2": {
       "title": "Intl (JavaScript)",
@@ -116,6 +116,10 @@
     "tech4": {
       "title": "Axios (API Consumption)",
       "description": "Axios is a promise-based HTTP library I use to consume APIs efficiently and robustly in web applications. With support for GET, POST requests, and error handling, Axios simplifies integration with external services like OpenWeatherMap for weather data and Unsplash for dynamic images. In this project, I implemented asynchronous calls to fetch real-time data, handling JSON responses and dynamically updating the UI. The example beside demonstrates how Axios retrieves a city’s weather and a background image, showcasing its ease of use and flexibility."
+    },
+    "tech5": {
+      "title": "Amazon S3 (Cloud Storage)",
+      "description": "All images and videos on this site are stored in an Amazon S3 (Simple Storage Service) bucket, a highly scalable and durable cloud storage service from AWS. S3 provides an object storage infrastructure that allows hosting files securely, accessibly, and cost-effectively, with 99.999999999% durability. I use S3 to centralize multimedia assets, leveraging its integration with web applications through public or pre-signed URLs, as well as its ability to scale automatically with traffic. This service is crucial for ensuring low latency, high availability, and reliable backups, optimizing performance and user experience in distributed projects."
     }
   },
   "Form": {

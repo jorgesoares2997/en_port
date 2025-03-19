@@ -41,11 +41,7 @@ export default function Projects() {
           <SectionRightText
             key={index}
             title={project.title}
-            description={`${project.description} ${
-              project.link
-                ? `\n\n[**Acesse a aplicação aqui**](${project.link})`
-                : ""
-            }`}
+            description={`${project.description}`}
             videoUrl={project.videoUrl}
             bgColor={project.bgColor}
             link={project.link}

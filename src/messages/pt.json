@@ -105,7 +105,7 @@
     "flagsLabel": "Escolha o idioma:",
     "tech1": {
       "title": "JavaMail",
-      "description": "Utilizo JavaMail para enviar emails diretamente de aplicações Java, configurando servidores SMTP para comunicação eficiente, como demonstrado nesta API simples sem autenticação."
+      "description": "JavaMail é uma API amplamente utilizada para o envio e recebimento de emails em aplicações Java. Ela permite a configuração de servidores SMTP, POP e IMAP, garantindo uma comunicação eficiente e segura. Grandes empresas como Oracle, IBM e Red Hat utilizam soluções baseadas no JavaMail para gerenciar sistemas de email corporativos e notificações automatizadas."
     },
     "tech2": {
       "title": "Intl (JavaScript)",
@@ -118,6 +118,10 @@
     "tech4": {
       "title": "Axios (Consumo de APIs)",
       "description": "O Axios é uma biblioteca HTTP baseada em promessas que utilizo para consumir APIs de forma eficiente e robusta em aplicações web. Com suporte a requisições GET, POST e tratamento de erros, o Axios simplifica a integração com serviços externos, como a OpenWeatherMap para dados climáticos e a Unsplash para imagens dinâmicas. Neste projeto, implementei chamadas assíncronas para buscar informações em tempo real, manipulando respostas JSON e atualizando a UI dinamicamente. O exemplo ao lado demonstra como o Axios é usado para buscar o clima de uma cidade e uma imagem de fundo, destacando sua facilidade de uso e flexibilidade."
+    },
+    "tech5": {
+      "title": "Amazon S3 (Armazenamento em Nuvem)",
+      "description": "Todas as imagens e vídeos deste site são armazenados em um bucket do Amazon S3 (Simple Storage Service), um serviço de armazenamento em nuvem altamente escalável e durável da AWS. O S3 oferece uma infraestrutura de armazenamento de objetos que permite hospedar arquivos de forma segura, acessível e econômica, com 99,999999999% de durabilidade. Utilizo o S3 para centralizar ativos multimídia, aproveitando sua integração com aplicações web via URLs públicas ou pré-assinadas, além de sua capacidade de escalar automaticamente conforme o tráfego. Esse serviço é essencial para garantir baixa latência, alta disponibilidade e backups confiáveis, otimizando a performance e a experiência do usuário em projetos distribuídos."
     }
   },
   "Form": {

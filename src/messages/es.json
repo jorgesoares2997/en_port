@@ -99,7 +99,7 @@
     "flagsLabel": "Elige el idioma:",
     "tech1": {
       "title": "JavaMail",
-      "description": "Utilizo JavaMail para enviar correos directamente desde aplicaciones Java, configurando servidores SMTP para una comunicación eficiente, como se muestra en esta API simple sin autenticación."
+      "description": "JavaMail es una API ampliamente utilizada para enviar y recibir correos electrónicos en aplicaciones Java. Permite la configuración de servidores SMTP, POP e IMAP, garantizando una comunicación eficiente y segura. Grandes empresas como Oracle, IBM y Red Hat utilizan soluciones basadas en JavaMail para gestionar sistemas de correo corporativo y notificaciones automatizadas."
     },
     "tech2": {
       "title": "Intl (JavaScript)",
@@ -112,6 +112,10 @@
     "tech4": {
       "title": "Axios (Consumo de APIs)",
       "description": "Axios es una biblioteca HTTP basada en promesas que utilizo para consumir APIs de manera eficiente y robusta en aplicaciones web. Con soporte para solicitudes GET, POST y manejo de errores, Axios simplifica la integración con servicios externos como OpenWeatherMap para datos climáticos y Unsplash para imágenes dinámicas. En este proyecto, implementé llamadas asíncronas para obtener datos en tiempo real, manejando respuestas JSON y actualizando la UI dinámicamente. El ejemplo al lado demuestra cómo Axios obtiene el clima de una ciudad y una imagen de fondo, destacando su facilidad de uso y flexibilidad."
+    },
+    "tech5": {
+      "title": "Amazon S3 (Almacenamiento en la Nube)",
+      "description": "Todas las imágenes y videos de este sitio están almacenados en un bucket de Amazon S3 (Simple Storage Service), un servicio de almacenamiento en la nube altamente escalable y duradero de AWS. El S3 ofrece una infraestructura de almacenamiento de objetos que permite alojar archivos de forma segura, accesible y económica, con un 99,999999999% de durabilidad. Utilizo S3 para centralizar activos multimedia, aprovechando su integración con aplicaciones web mediante URLs públicas o pre-firmadas, además de su capacidad para escalar automáticamente según el tráfico. Este servicio es esencial para garantizar baja latencia, alta disponibilidad y copias de seguridad confiables, optimizando el rendimiento y la experiencia del usuario en proyectos distribuidos."
     }
   },
   "Form": {

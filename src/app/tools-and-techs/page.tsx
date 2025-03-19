@@ -30,12 +30,17 @@ export default function ToolsAndTechs() {
     {
       title: t("ToolsAndTechs.tech3.title"),
       description: t("ToolsAndTechs.tech3.description"),
-      imageUrl: "/docker.webp",
+      imageUrl: "https://port-bu.s3.eu-north-1.amazonaws.com/docker.webp",
     },
     {
       title: t("ToolsAndTechs.tech4.title"),
       description: t("ToolsAndTechs.tech4.description"),
       weatherDemo: true, // Ativa o demo de clima
+    },
+    {
+      title: t("ToolsAndTechs.tech5.title"),
+      description: t("ToolsAndTechs.tech5.description"),
+      imageUrl: "https://port-bu.s3.eu-north-1.amazonaws.com/bucket.jpg",
     },
   ];
   const bgColors = [
@@ -43,6 +48,7 @@ export default function ToolsAndTechs() {
     "bg-neon-pink/60",
     "bg-dark-blue/60",
     "bg-neon-pink/60",
+    "bg-dark-blue/60",
   ];
 
   return (
