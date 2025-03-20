@@ -31,7 +31,7 @@ export default function Contact() {
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <ContactInfo isLoggedIn={false} />
+        <ContactInfo/>
         <ContactForm />
       </div>
     </div>
