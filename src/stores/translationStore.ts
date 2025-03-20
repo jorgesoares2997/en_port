@@ -51,20 +51,16 @@ interface Translations {
     description: string;
   };
   Contact: {
-    title: string;
-    myInfo: string;
     sendMessage: string;
     form: {
       name: string;
       email: string;
       message: string;
     };
-    submit: string;
+    send: string;
     sending: string;
     successMessage: string;
     errorMessage: string;
-    loginToWhatsApp: string;
-    techDescription: string;
   };
   Footer: {
     about: string;

@@ -39,7 +39,7 @@
   },
   "Contact": {
     "sendMessage": "Send Message",
-    "form": {
+    "form": { 
       "name": "Name",
       "email": "Email",
       "message": "Message"
