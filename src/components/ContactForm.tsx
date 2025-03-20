@@ -1,9 +1,6 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useTranslationStore } from "@/stores/translationStore";
-import { useAuthStore } from "@/stores/authStore";
-import { useSearchParams } from "next/navigation";
-import SocialButton from "./SocialButton";
 import axios from "axios";
 
 interface FormData {
@@ -12,40 +9,14 @@ interface FormData {
   message: string;
 }
 
-interface SocialProvider {
-  id: string;
-  loginEndpoint: string;
-}
-
 export default function ContactForm() {
   const { t } = useTranslationStore();
-  const { setToken } = useAuthStore();
-  const searchParams = useSearchParams();
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
     message: "",
   });
   const [isSending, setIsSending] = useState(false);
-
-  const socialProviders: SocialProvider[] = [
-    { id: "linkedin", loginEndpoint: "/linkedin/login" },
-    { id: "github", loginEndpoint: "/github/login" },
-    { id: "google", loginEndpoint: "/google/login" },
-    { id: "apple", loginEndpoint: "/apple/login" },
-    { id: "whatsapp", loginEndpoint: "/whatsapp/login" },
-  ];
-
-  useEffect(() => {
-    const tokenFromUrl = searchParams.get("token");
-    const state = searchParams.get("state");
-    if (tokenFromUrl && state) {
-      setToken(tokenFromUrl);
-      const [name, email, message] = atob(state).split("|");
-      setFormData({ name, email, message });
-      sendMessage("auto", tokenFromUrl);
-    }
-  }, [searchParams, setToken]);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -54,51 +25,28 @@ export default function ContactForm() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSendWithProvider = (provider: SocialProvider) => {
-    window.location.href = `https://compras-auth.onrender.com/api/auth${
-      provider.loginEndpoint
-    }?name=${encodeURIComponent(formData.name)}&email=${encodeURIComponent(
-      formData.email
-    )}&message=${encodeURIComponent(formData.message)}`;
-  };
-
-  const sendMessage = async (providerId: string, authToken: string) => {
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
     setIsSending(true);
+
     try {
-      const endpoint =
-        providerId === "whatsapp" ? "/send-whatsapp" : "/send-email";
-      const payload =
-        providerId === "whatsapp"
-          ? {
-              to: "+5581987594291",
-              message: `Mensagem de ${formData.name} (${formData.email}): ${formData.message}`,
-            }
-          : {
-              from: formData.email,
-              to: "jorge@example.com",
-              cc: formData.email,
-              subject: `Contato do Portfólio - ${formData.name}`,
-              body: `Nome: ${formData.name}\nEmail: ${formData.email}\nMensagem: ${formData.message}`,
-            };
+      const payload = {
+        to: "jorgesoares2997@gmail.com", // Seu email fixo como destinatário
+        subject: `Contato do Portfólio - ${formData.name}`,
+        body: `Nome: ${formData.name}\nEmail: ${formData.email}\nMensagem: ${formData.message}`,
+      };
 
       const response = await axios.post(
-        `https://compras-auth.onrender.com${endpoint}`,
-        payload,
-        {
-          headers: { Authorization: `Bearer ${authToken}` },
-        }
+        "https://api-mail-sw48.onrender.com/api/public/emails", // URL da sua API pública
+        payload
       );
 
       if (response.status === 200) {
-        alert(
-          providerId === "whatsapp"
-            ? "Mensagem enviada via WhatsApp!"
-            : t("Contact.successMessage")
-        );
+        alert(t("Contact.successMessage"));
         setFormData({ name: "", email: "", message: "" });
       }
     } catch (error) {
-      console.error(`Erro ao enviar via ${providerId}:`, error);
+      console.error("Erro ao enviar email:", error);
       alert(t("Contact.errorMessage"));
     } finally {
       setIsSending(false);
@@ -110,7 +58,7 @@ export default function ContactForm() {
       <h2 className="text-3xl font-semibold text-neon-pink mb-6">
         {t("Contact.sendMessage")}
       </h2>
-      <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+      <form className="space-y-6" onSubmit={handleSubmit}>
         <div>
           <label htmlFor="name" className="block text-neon-blue mb-2">
             {t("Contact.form.name")}
@@ -153,15 +101,18 @@ export default function ContactForm() {
             className="w-full p-3 bg-dark-bg text-neon-blue border border-neon-blue/20 rounded-md focus:outline-none focus:border-neon-pink"
           />
         </div>
-        <div className="flex flex-wrap gap-4 justify-center">
-          {socialProviders.map((provider) => (
-            <SocialButton
-              key={provider.id}
-              provider={provider.id}
-              onClick={() => handleSendWithProvider(provider)}
-              disabled={isSending}
-            />
-          ))}
+        <div className="flex justify-center">
+          <button
+            type="submit"
+            disabled={isSending}
+            className={`px-6 py-3 rounded-md text-white font-semibold ${
+              isSending
+                ? "bg-gray-500 cursor-not-allowed"
+                : "bg-neon-pink hover:bg-neon-pink/80"
+            } transition-colors`}
+          >
+            {isSending ? t("Contact.sending") : t("Contact.send")}
+          </button>
         </div>
       </form>
     </div>

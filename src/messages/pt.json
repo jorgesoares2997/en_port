@@ -48,20 +48,16 @@
     "rights": "© 2025 Todos os direitos reservados"
   },
   "Contact": {
-    "title": "Contato",
-    "myInfo": "Minhas Informações",
-    "sendMessage": "Envie uma Mensagem",
+    "sendMessage": "Enviar Mensagem",
     "form": {
       "name": "Nome",
       "email": "Email",
       "message": "Mensagem"
     },
-    "submit": "Enviar",
+    "send": "Enviar",
     "sending": "Enviando...",
-    "successMessage": "Email enviado com sucesso! Você receberá uma cópia como comprovante.",
-    "errorMessage": "Erro ao enviar o email. Tente novamente.",
-    "loginToWhatsApp": "Faça login para enviar mensagem no WhatsApp",
-    "techDescription": "Esta página usa Next.js, Axios, e autenticação JWT para segurança e eficiência. Entre em contato comigo para soluções modernas como esta!"
+    "successMessage": "Mensagem enviada com sucesso!",
+    "errorMessage": "Erro ao enviar a mensagem. Tente novamente."
   },
   "Aboutpage": {
     "title": "Sobre",
@@ -137,13 +133,13 @@
     }
   },
   "Form": {
-    "toPlaceholder": "Destinatário",
-    "subjectPlaceholder": "Assunto",
-    "bodyPlaceholder": "Mensagem",
-    "submitButton": "Enviar Email",
-    "invalidEmail": "Por favor, insira um email válido.",
+    "toPlaceholder": "Digite o email do destinatário",
+    "subjectPlaceholder": "Digite o assunto",
+    "bodyPlaceholder": "Digite sua mensagem",
+    "submitButton": "Enviar",
     "sending": "Enviando...",
-    "success": "Email enviado com sucesso!",
-    "error": "Erro ao enviar email: "
+    "success": "Mensagem enviada com sucesso: ",
+    "error": "Erro ao enviar: ",
+    "invalidEmail": "Email inválido"
   }
 }

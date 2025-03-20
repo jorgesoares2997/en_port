@@ -34,20 +34,16 @@
     }
   },
   "Contact": {
-    "title": "Contacto",
-    "myInfo": "Mi Información",
-    "sendMessage": "Enviar un Mensaje",
+    "sendMessage": "Enviar Mensaje",
     "form": {
       "name": "Nombre",
-      "email": "Correo",
+      "email": "Correo Electrónico",
       "message": "Mensaje"
     },
-    "submit": "Enviar",
+    "send": "Enviar",
     "sending": "Enviando...",
-    "successMessage": "¡Correo enviado con éxito! Recibirás una copia como comprobante.",
-    "errorMessage": "Error al enviar el correo. Intenta de nuevo.",
-    "loginToWhatsApp": "Inicia sesión para enviar un mensaje por WhatsApp",
-    "techDescription": "Tecnologias que utilizo no projeto"
+    "successMessage": "¡Mensaje enviado con éxito!",
+    "errorMessage": "Error al enviar el mensaje. Intenta de nuevo."
   },
   "Footer": {
     "about": "Acerca de",
@@ -131,13 +127,13 @@
     }
   },
   "Form": {
-    "toPlaceholder": "Destinatario",
-    "subjectPlaceholder": "Asunto",
-    "bodyPlaceholder": "Mensaje",
-    "submitButton": "Enviar Email",
-    "invalidEmail": "Por favor, ingrese un email válido.",
+    "toPlaceholder": "Ingresa el correo del destinatario",
+    "subjectPlaceholder": "Ingresa el asunto",
+    "bodyPlaceholder": "Ingresa tu mensaje",
+    "submitButton": "Enviar",
     "sending": "Enviando...",
-    "success": "¡Email enviado con éxito!",
-    "error": "Error al enviar email: "
+    "success": "Mensaje enviado con éxito: ",
+    "error": "Error al enviar: ",
+    "invalidEmail": "Correo inválido"
   }
 }

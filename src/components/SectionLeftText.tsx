@@ -8,7 +8,7 @@ interface SectionProps {
   title: string;
   description: string;
   videoUrl?: string;
-  imageUrl?: string; // Novo prop para imagem estática
+  imageUrl?: string;
   bgColor: string;
   form?: boolean;
   link?: string;
@@ -46,17 +46,18 @@ export default function SectionLeftText({
     setStatus(t("Form.sending"));
     try {
       const response = await axios.post(
-        "https://compras-auth.onrender.com/api/email/send",
-        null,
-        { params: formData }
+        "https://api-mail-sw48.onrender.com/api/public/emails",
+        formData,
+        { headers: { "Content-Type": "application/json" } }
       );
-      setStatus(`${t("Form.success")}${response}`);
+      setStatus(t("Form.success") + response.data);
       setFormData({ to: "", subject: "", body: "" });
       setTimeout(() => setStatus(null), 3000);
     } catch (error) {
       const axiosError = error as AxiosError;
       setStatus(
-        t("Form.error") + (axiosError.response?.data || axiosError.message)
+        t("Form.error") +
+          (axiosError.response?.data?.toString() || axiosError.message)
       );
       setTimeout(() => setStatus(null), 3000);
     }

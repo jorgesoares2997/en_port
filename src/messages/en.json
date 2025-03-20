@@ -38,20 +38,16 @@
     }
   },
   "Contact": {
-    "title": "Contact",
-    "myInfo": "My Info",
-    "sendMessage": "Send a Message",
+    "sendMessage": "Send Message",
     "form": {
       "name": "Name",
       "email": "Email",
       "message": "Message"
     },
-    "submit": "Send",
+    "send": "Send",
     "sending": "Sending...",
-    "successMessage": "Email sent successfully! You’ll receive a copy as proof.",
-    "errorMessage": "Error sending email. Please try again.",
-    "loginToWhatsApp": "Log in to send a WhatsApp message",
-    "techDescription": "Tecnologias que utilizo no projeto"
+    "successMessage": "Message sent successfully!",
+    "errorMessage": "Error sending message. Please try again."
   },
   "Footer": {
     "about": "About",
@@ -135,13 +131,13 @@
     }
   },
   "Form": {
-    "toPlaceholder": "Recipient",
-    "subjectPlaceholder": "Subject",
-    "bodyPlaceholder": "Message",
-    "submitButton": "Send Email",
-    "invalidEmail": "Please enter a valid email.",
+    "toPlaceholder": "Enter the recipient's email",
+    "subjectPlaceholder": "Enter the subject",
+    "bodyPlaceholder": "Enter your message",
+    "submitButton": "Send",
     "sending": "Sending...",
-    "success": "Email sent successfully!",
-    "error": "Error sending email: "
+    "success": "Message sent successfully: ",
+    "error": "Error sending: ",
+    "invalidEmail": "Invalid email"
   }
 }
