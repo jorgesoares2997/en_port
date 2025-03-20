@@ -49,6 +49,8 @@
   },
   "Contact": {
     "sendMessage": "Enviar Mensagem",
+    "title": "Página de Contato",
+    "myInfo": "Minhas informações",
     "form": {
       "name": "Nome",
       "email": "Email",

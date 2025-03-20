@@ -39,7 +39,9 @@
   },
   "Contact": {
     "sendMessage": "Send Message",
-    "form": { 
+    "title": "Contact Page",
+    "myInfo": "My informations",
+    "form": {
       "name": "Name",
       "email": "Email",
       "message": "Message"

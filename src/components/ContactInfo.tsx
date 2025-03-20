@@ -1,11 +1,6 @@
-
 import { useTranslationStore } from "@/stores/translationStore";
 
-interface ContactInfoProps {
-  isLoggedIn: boolean;
-}
-
-export default function ContactInfo({ isLoggedIn }: ContactInfoProps) {
+export default function ContactInfo() {
   const { t } = useTranslationStore();
 
   return (
@@ -17,7 +12,7 @@ export default function ContactInfo({ isLoggedIn }: ContactInfoProps) {
         <li>
           <strong>Email:</strong>{" "}
           <a href="mailto:jorge@example.com" className="hover:text-neon-pink">
-            jorge@example.com
+            Jorgesoares2997@gmail.com
           </a>
         </li>
         <li>
@@ -44,18 +39,14 @@ export default function ContactInfo({ isLoggedIn }: ContactInfoProps) {
         </li>
         <li>
           <strong>WhatsApp:</strong>{" "}
-          {isLoggedIn ? (
-            <a
-              href="https://wa.me/5581987594291"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-neon-pink"
-            >
-              (+55) 81 98759-4291
-            </a>
-          ) : (
-            <span>{t("Contact.loginToWhatsApp")}</span>
-          )}
+          <a
+            href="https://wa.me/5581987594291"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-neon-pink"
+          >
+            (+55) 81 98759-4291
+          </a>
         </li>
       </ul>
     </div>

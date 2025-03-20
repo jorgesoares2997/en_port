@@ -35,6 +35,8 @@
   },
   "Contact": {
     "sendMessage": "Enviar Mensaje",
+    "title": "Página de Contacto",
+    "myInfo": "Mis informaciones",
     "form": {
       "name": "Nombre",
       "email": "Correo Electrónico",
