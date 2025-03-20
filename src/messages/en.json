@@ -53,7 +53,7 @@
   },
   "Footer": {
     "about": "About",
-    "description": "A futuristic Next.js project with neon vibes",
+    "description": "My tech portfolio created with integrated technologies using Next.js, Tailwind CSS, TypeScript, and Java Spring Boot.",
     "links": "Links",
     "contact": "Contact",
     "email": "jorgesoares2997@gmail.com",
@@ -78,7 +78,8 @@
       "currently2": ", where I apply my skills to real-world projects.",
       "goal": "My goal is to expand my knowledge and develop mobile applications using ",
       "goal2": ", furthering my growth in the tech industry.",
-      "connect": "I’m ready to connect with other professionals and contribute to meaningful projects that drive innovation and impact."
+      "connect": "I’m ready to connect with other professionals and contribute to meaningful projects that drive innovation and impact.",
+      "and": "and"
     },
     "portfolio": {
       "title": "About This Portfolio",
@@ -89,7 +90,7 @@
       "frontend2": " to handle translations and authentication, while the internationalization system was built from scratch with support for multiple languages (Portuguese, English, and Spanish).",
       "frontend3": "Subtle animations and a neon theme were inspired by cyberpunk aesthetics, delivering a unique visual experience.",
       "backend1": "On the backend, I developed a RESTful API with ",
-      "backend2": ", hosted on Render (",
+      "backend2": ", hosted on Render",
       "backend3": "It supports social authentication via OAuth 2.0 with Google, LinkedIn, GitHub, and Apple, plus email and WhatsApp messaging using ",
       "backend4": " for security.",
       "goal": "The goal of this project was to showcase my ability to create complete solutions, from conception to deployment, integrating frontend, backend, and external services efficiently and scalably."

@@ -1,5 +1,5 @@
 import { useTranslationStore } from "@/stores/translationStore";
-import Link from "next/link";
+// import Link from "next/link";
 
 export default function AboutPortfolioSection() {
   const { t } = useTranslationStore();
@@ -19,19 +19,14 @@ export default function AboutPortfolioSection() {
           </p>
           <p>
             {t("Aboutpage.portfolio.frontend1")} <strong>Zustand</strong>
-            {t("Aboutpage.portfolio.frontend2")} {t("Aboutpage.portfolio.frontend3")}
+            {t("Aboutpage.portfolio.frontend2")}{" "}
+            {t("Aboutpage.portfolio.frontend3")}
           </p>
           <p>
-            {t("Aboutpage.portfolio.backend1")} <strong>Java Spring Boot</strong>
-            {t("Aboutpage.portfolio.backend2")}{" "}
-            <Link
-              href="https://compras-auth.onrender.com"
-              target="_blank"
-              className="text-neon-pink hover:underline"
-            >
-              compras-auth.onrender.com
-            </Link>
-            . {t("Aboutpage.portfolio.backend3")} <strong>JavaMail</strong>{" "}
+            {t("Aboutpage.portfolio.backend1")}{" "}
+            <strong>Java Spring Boot</strong>
+            {t("Aboutpage.portfolio.backend2")} .{" "}
+            {t("Aboutpage.portfolio.backend3")} <strong>JavaMail</strong>{" "}
             {t("Aboutpage.me.and")} <strong>JWT</strong>
             {t("Aboutpage.portfolio.backend4")}
           </p>
