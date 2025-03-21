@@ -2,6 +2,7 @@
 import { useTranslationStore } from "@/stores/translationStore";
 import WeatherMini from "./WeatherMini";
 import { FaArrowAltCircleRight } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 interface SectionProps {
   title: string;
@@ -65,12 +66,15 @@ export default function SectionRightText({
               </div>
             </div>
           ) : videoUrl ? (
-            <video
+            <motion.video
               src={videoUrl}
               autoPlay
               loop
               muted
-              className="w-full rounded-lg shadow-lg border border-neon-blue/20"
+              className="w-full rounded-lg max-w-80 shadow-lg border border-neon-blue/20"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
             />
           ) : null}
         </div>

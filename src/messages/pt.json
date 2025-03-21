@@ -36,6 +36,12 @@
     "project2": {
       "title": "Sistema de Gerenciamento de Ordens de Compra",
       "description": "O Sistema de Gerenciamento de Ordens de Compra é uma aplicação backend desenvolvida com Java Spring Boot, projetada para gerenciar ordens de compra por meio de operações CRUD (Create, Read, Update, Delete). Utilizando uma arquitetura RESTful, a aplicação expõe endpoints para cadastrar, consultar, atualizar e excluir ordens, integrando-se a um banco de dados relacional via Spring Data JPA com Hibernate. Implementei validações robustas com Bean Validation, mapeamento objeto-relacional (ORM) eficiente e controle transacional para garantir integridade dos dados. A API foi estruturada com padrões de design como DTOs (Data Transfer Objects) para encapsulamento e segurança, oferecendo uma base escalável para sistemas de e-commerce ou ERP."
+    },
+    "comprasApp": {
+      "title": "Compras App",
+      "description": "Um aplicativo híbrido desenvolvido em Flutter para gerenciamento de equipamentos e relatórios. Integra tecnologias como JavaMail para envio de e-mails, JWT para autenticação segura, e consome a mesma API CRUD usada na versão web . O app suporta web (hospedado no Firebase Hosting) e Android (distribuído via APK), com recursos como notificações locais, internacionalização e integração com serviços de terceiros.",
+      "webLink": "Acessar Versão Web",
+      "apkLink": "Baixar APK (Android)"
     }
   },
 
