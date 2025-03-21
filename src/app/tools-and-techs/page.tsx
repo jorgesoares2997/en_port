@@ -58,7 +58,7 @@ export default function ToolsAndTechs() {
       description: t("ToolsAndTechs.tech8.description"),
     },
     {
-      title: t("ToolsAndTechs.teclih9.title"),
+      title: t("ToolsAndTechs.tech9.title"),
       description: t("ToolsAndTechs.tech9.description"),
       link: "https://compras-sand.vercel.app",
       imageUrl: "https://port-bu.s3.eu-north-1.amazonaws.com/tutorial.mp4", // Imagem opcional
