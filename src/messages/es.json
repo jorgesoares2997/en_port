@@ -37,7 +37,7 @@
       "description": "El Sistema de Gestión de Órdenes de Compra es una aplicación backend construida con Java Spring Boot, diseñada para gestionar órdenes de compra a través de operaciones CRUD (Crear, Leer, Actualizar, Eliminar). Aprovechando una arquitectura RESTful, expone endpoints para registrar, recuperar, actualizar y eliminar órdenes, integrándose con una base de datos relacional mediante Spring Data JPA con Hibernate. Implementé validaciones sólidas utilizando Bean Validation, un mapeo objeto-relacional (ORM) eficiente y control transaccional para garantizar la integridad de los datos. La API sigue patrones de diseño como DTOs (Objetos de Transferencia de Datos) para encapsulación y seguridad, proporcionando una base escalable para sistemas de comercio electrónico o ERP."
     },
     "comprasApp": {
-      "title": "Compras App",
+      "title": "Audio IBP App",
       "description": "Una aplicación híbrida desarrollada en Flutter para la gestión de equipos y reportes. Integra tecnologías como JavaMail para el envío de correos, JWT para autenticación segura, y consume la misma API CRUD que la versión web. La app soporta web (alojada en Firebase Hosting) y Android (distribuida vía APK), con funciones como notificaciones locales, internacionalización e integración con servicios de terceros.",
       "webLink": "Acceder a la Versión Web",
       "apkLink": "Descargar APK (Android)"

@@ -8,6 +8,7 @@ interface Project {
   description: string;
   videoUrl?: string;
   link?: string;
+  videoOptional?: string;
   bgColor: string;
 }
 
@@ -35,6 +36,7 @@ export default function Projects() {
       videoUrl: "https://port-bu.s3.eu-north-1.amazonaws.com/flutter.mp4",
       bgColor: "bg-dark-blue/60",
       link: "https://audioibpapp.web.app",
+      videoOptional:"max-w-80 m-auto"
     },
   ];
 
@@ -52,6 +54,7 @@ export default function Projects() {
             videoUrl={project.videoUrl}
             bgColor={project.bgColor}
             link={project.link}
+            videoOptional={project.videoOptional}
           />
         ) : (
           <SectionLeftText
