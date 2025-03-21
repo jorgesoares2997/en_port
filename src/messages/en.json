@@ -52,6 +52,7 @@
       "email": "Email",
       "message": "Message"
     },
+    "techDescription": "Let's connect! Whether you have a project idea, a question, or just want to chat, feel free to reach out.",
     "send": "Send",
     "sending": "Sending...",
     "successMessage": "Message sent successfully!",

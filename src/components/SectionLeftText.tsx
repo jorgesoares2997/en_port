@@ -134,10 +134,15 @@ export default function SectionLeftText({
               )}
             </form>
           ) : imageUrl ? (
-            <img
+            <motion.img
               src={imageUrl}
               alt={title}
-              className="w-full rounded-lg shadow-lg border border-neon-blue/20 object-cover"
+              className="rounded-lg shadow-lg border border-neon-blue/20"
+              whileHover={{
+                scale: 1.1,
+                boxShadow: "0px 4px 15px rgba(0, 255, 255, 0.5)",
+              }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
             />
           ) : (
             videoUrl && (

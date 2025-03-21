@@ -52,6 +52,7 @@
       "email": "Correo Electrónico",
       "message": "Mensaje"
     },
+    "techDescription": "¡Conectémonos! Si tienes una idea de proyecto, una pregunta o solo quieres charlar, no dudes en ponerte en contacto.",
     "send": "Enviar",
     "sending": "Enviando...",
     "successMessage": "¡Mensaje enviado con éxito!",
