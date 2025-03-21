@@ -10,6 +10,7 @@ interface Tech {
   imageUrl?: string;
   form?: boolean;
   flags?: boolean;
+  link?: string;
   weatherDemo?: boolean; // Novo prop para demo de clima
 }
 
@@ -56,6 +57,12 @@ export default function ToolsAndTechs() {
       title: t("ToolsAndTechs.tech8.title"),
       description: t("ToolsAndTechs.tech8.description"),
     },
+    {
+      title: t("ToolsAndTechs.teclih9.title"),
+      description: t("ToolsAndTechs.tech9.description"),
+      link: "https://compras-sand.vercel.app",
+      imageUrl: "https://port-bu.s3.eu-north-1.amazonaws.com/tutorial.mp4", // Imagem opcional
+    },
   ];
   const bgColors = [
     "bg-dark-blue/60",
@@ -66,6 +73,7 @@ export default function ToolsAndTechs() {
     "bg-neon-pink/60",
     "bg-dark-blue/60",
     "bg-neon-pink/60",
+    "bg-dark-blue/60",
   ];
 
   return (
@@ -83,6 +91,7 @@ export default function ToolsAndTechs() {
             imageUrl={tech.imageUrl}
             bgColor={bgColors[index]}
             form={tech.form}
+            link={tech.link}
           />
         ) : (
           <SectionRightText

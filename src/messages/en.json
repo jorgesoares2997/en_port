@@ -131,6 +131,10 @@
     "tech8": {
       "title": "OpenID (Decentralized Authentication)",
       "description": "OpenID is a decentralized authentication protocol I integrated into this project to provide secure login via external identity providers like Google or Auth0. Based on OAuth 2.0, OpenID Connect adds an identity layer to the authorization flow, returning an ID Token that authenticates the user. In the Spring Boot backend, I configured OpenID support to validate tokens and manage sessions, reducing the need for a local login system. Its importance in robust websites lies in enhanced security, interoperability with popular services, and user experience, enabling fast, reliable authentication without direct password management."
+    },
+    "tech9": {
+      "title": "React Joyride",
+      "description": "A library for React that enables the creation of interactive tutorials and step-by-step guides in your web application. Perfect for enhancing user experience by introducing features or highlighting updates, with customizable tooltips and continuous navigation support."
     }
   },
   "Form": {
