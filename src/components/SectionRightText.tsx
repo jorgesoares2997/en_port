@@ -13,6 +13,7 @@ interface SectionProps {
   weatherDemo?: boolean;
   link?: string;
   videoOptional?: string;
+  links?: { label: string; url: string }[];
 }
 
 export default function SectionRightText({
@@ -24,6 +25,7 @@ export default function SectionRightText({
   weatherDemo = false,
   videoOptional,
   link,
+  links,
 }: SectionProps) {
   const { t, locale, setLocale } = useTranslationStore();
 
@@ -75,7 +77,10 @@ export default function SectionRightText({
               muted
               className={`w-full rounded-lg ${videoOptional} shadow-lg border border-neon-blue/20`}
               initial={{ scale: 1, boxShadow: "none" }}
-              whileHover={{ scale: 1.1, boxShadow: "0px 4px 15px rgba(0, 255, 255, 0.5)" }}
+              whileHover={{
+                scale: 1.1,
+                boxShadow: "0px 4px 15px rgba(0, 255, 255, 0.5)",
+              }}
               transition={{ duration: 0.3, ease: "easeOut" }}
             />
           ) : null}
@@ -88,6 +93,7 @@ export default function SectionRightText({
               <FaArrowAltCircleRight />
             </a>
           ) : null}
+          {links ? <a href={links[1].url}>{links[1].label}</a> : null}
         </div>
       </div>
     </section>
