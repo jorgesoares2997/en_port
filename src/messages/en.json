@@ -35,6 +35,12 @@
     "project2": {
       "title": "Purchase Order Management System",
       "description": "The Purchase Order Management System is a backend application built with Java Spring Boot, designed to manage purchase orders through CRUD (Create, Read, Update, Delete) operations. Leveraging a RESTful architecture, it exposes endpoints to register, retrieve, update, and delete orders, integrating with a relational database via Spring Data JPA with Hibernate. I implemented robust validations using Bean Validation, efficient object-relational mapping (ORM), and transactional control to ensure data integrity. The API follows design patterns like DTOs (Data Transfer Objects) for encapsulation and security, providing a scalable foundation for e-commerce or ERP systems."
+    },
+    "comprasApp": {
+      "title": "Audio IBP App",
+      "description": "A hybrid application built with Flutter for equipment and report management. It integrates technologies like JavaMail for email sending, JWT for secure authentication, and consumes the same CRUD API as the web version . The app supports web (hosted on Firebase Hosting) and Android (distributed via APK), featuring local notifications, internationalization, and third-party service integration.",
+      "webLink": "Access Web Version",
+      "apkLink": "Download APK (Android)"
     }
   },
   "Contact": {

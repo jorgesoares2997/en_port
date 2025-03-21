@@ -3,6 +3,7 @@ import { useTranslationStore } from "@/stores/translationStore";
 import { useState } from "react";
 import axios, { AxiosError } from "axios";
 import { FaArrowAltCircleRight } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 interface SectionProps {
   title: string;
@@ -12,6 +13,7 @@ interface SectionProps {
   bgColor: string;
   form?: boolean;
   link?: string;
+  videoOptional?: string;
 }
 
 export default function SectionLeftText({
@@ -22,6 +24,7 @@ export default function SectionLeftText({
   bgColor,
   form = false,
   link,
+  videoOptional,
 }: SectionProps) {
   const { t } = useTranslationStore();
   const [formData, setFormData] = useState({ to: "", subject: "", body: "" });
@@ -138,12 +141,18 @@ export default function SectionLeftText({
             />
           ) : (
             videoUrl && (
-              <video
+              <motion.video
                 src={videoUrl}
                 autoPlay
                 loop
                 muted
-                className="w-full rounded-lg shadow-lg border border-neon-blue/20"
+                className={`w-full rounded-lg ${videoOptional} shadow-lg border border-neon-blue/20`}
+                initial={{ scale: 1, boxShadow: "none" }}
+                whileHover={{
+                  scale: 1.1,
+                  boxShadow: "0px 4px 15px rgba(0, 255, 255, 0.5)",
+                }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
               />
             )
           )}

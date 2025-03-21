@@ -31,6 +31,16 @@
     "project1": {
       "title": "Weather App",
       "description": "La Weather App es una aplicación web que permite a los usuarios consultar el clima en tiempo real de cualquier ciudad del mundo, utilizando la API OpenWeatherMap para datos climáticos y la API Unsplash para imágenes dinámicas de fondo. Desarrollada con Next.js y TypeScript, la aplicación consume APIs externas vía Axios, mostrando detalles como temperatura, humedad, velocidad del viento y descripción del clima, junto a la bandera del país correspondiente (vía FlagsAPI). El diseño es responsivo, estilizado con Tailwind CSS, y ofrece una experiencia visual inmersiva con imágenes que reflejan la ciudad buscada."
+    },
+    "project2": {
+      "title": "Purchase Order Management System",
+      "description": "El Sistema de Gestión de Órdenes de Compra es una aplicación backend construida con Java Spring Boot, diseñada para gestionar órdenes de compra a través de operaciones CRUD (Crear, Leer, Actualizar, Eliminar). Aprovechando una arquitectura RESTful, expone endpoints para registrar, recuperar, actualizar y eliminar órdenes, integrándose con una base de datos relacional mediante Spring Data JPA con Hibernate. Implementé validaciones sólidas utilizando Bean Validation, un mapeo objeto-relacional (ORM) eficiente y control transaccional para garantizar la integridad de los datos. La API sigue patrones de diseño como DTOs (Objetos de Transferencia de Datos) para encapsulación y seguridad, proporcionando una base escalable para sistemas de comercio electrónico o ERP."
+    },
+    "comprasApp": {
+      "title": "Audio IBP App",
+      "description": "Una aplicación híbrida desarrollada en Flutter para la gestión de equipos y reportes. Integra tecnologías como JavaMail para el envío de correos, JWT para autenticación segura, y consume la misma API CRUD que la versión web. La app soporta web (alojada en Firebase Hosting) y Android (distribuida vía APK), con funciones como notificaciones locales, internacionalización e integración con servicios de terceros.",
+      "webLink": "Acceder a la Versión Web",
+      "apkLink": "Descargar APK (Android)"
     }
   },
   "Contact": {

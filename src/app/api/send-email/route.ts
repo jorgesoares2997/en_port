@@ -13,7 +13,7 @@ export async function POST(request: Request) {
 
     const emailData = {
       from: email,
-      to: "jorge@example.com",
+      to: "jorgesoares2997@gmail.com",
       cc: email,
       subject: `Contato do Portfólio - ${name}`,
       body: `Nome: ${name}\nEmail: ${email}\nMensagem: ${message}`,

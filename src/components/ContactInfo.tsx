@@ -11,7 +11,7 @@ export default function ContactInfo() {
       <ul className="space-y-4 text-neon-blue">
         <li>
           <strong>Email:</strong>{" "}
-          <a href="mailto:jorge@example.com" className="hover:text-neon-pink">
+          <a href="mm" className="hover:text-neon-pink">
             Jorgesoares2997@gmail.com
           </a>
         </li>

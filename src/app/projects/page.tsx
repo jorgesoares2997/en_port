@@ -8,6 +8,7 @@ interface Project {
   description: string;
   videoUrl?: string;
   link?: string;
+  videoOptional?: string;
   bgColor: string;
 }
 
@@ -29,6 +30,14 @@ export default function Projects() {
       bgColor: "bg-neon-pink/60",
       link: "https://compras-sand.vercel.app",
     },
+    {
+      title: t("Projects.comprasApp.title"),
+      description: t("Projects.comprasApp.description"),
+      videoUrl: "https://port-bu.s3.eu-north-1.amazonaws.com/flutter.mp4",
+      bgColor: "bg-dark-blue/60",
+      link: "https://audioibpapp.web.app",
+      videoOptional:"max-w-80 m-auto"
+    },
   ];
 
   return (
@@ -41,10 +50,11 @@ export default function Projects() {
           <SectionRightText
             key={index}
             title={project.title}
-            description={`${project.description}`}
+            description={project.description}
             videoUrl={project.videoUrl}
             bgColor={project.bgColor}
             link={project.link}
+            videoOptional={project.videoOptional}
           />
         ) : (
           <SectionLeftText
