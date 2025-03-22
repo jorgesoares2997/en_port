@@ -65,10 +65,17 @@ interface Translations {
   Footer: {
     about: string;
     description: string;
-    links: string;
+    // links: string;
     contact: string;
     email: string;
     rights: string;
+    projects: {
+      title: string;
+      comprasAppWeb: string;
+      comprasAppAPK: string;
+      weather: string;
+      comprasSite: string;
+    };
   };
 }
 
