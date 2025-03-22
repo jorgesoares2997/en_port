@@ -60,11 +60,17 @@
   },
   "Footer": {
     "about": "About",
-    "description": "My tech portfolio created with integrated technologies using Next.js, Tailwind CSS, TypeScript, and Java Spring Boot.",
-    "links": "Links",
+    "description": "A portfolio showcase of my skills and projects as a developer.",
     "contact": "Contact",
     "email": "jorgesoares2997@gmail.com",
-    "rights": "© 2025 All rights reserved"
+    "rights": "© 2025 Jorge Soares. All rights reserved.",
+    "projects": {
+      "title": "Projects",
+      "comprasAppWeb": "Purchasing App - Web Version",
+      "comprasAppAPK": "Purchasing App - Android APK",
+      "weather": "Weather - Weather App",
+      "comprasSite": "Shopping Site"
+    }
   },
 
   "Aboutpage": {

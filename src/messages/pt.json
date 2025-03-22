@@ -47,11 +47,17 @@
 
   "Footer": {
     "about": "Sobre",
-    "description": "Meu portfólio tech criado com tecnologias integradas usando Next.js, Tailwind CSS, TypeScript e Java Spring Boot.",
-    "links": "Links",
+    "description": "Um portfólio showcase das minhas habilidades e projetos como desenvolvedor.",
     "contact": "Contato",
     "email": "jorgesoares2997@gmail.com",
-    "rights": "© 2025 Todos os direitos reservados"
+    "rights": "© 2025 Jorge Soares. Todos os direitos reservados.",
+    "projects": {
+      "title": "Projetos",
+      "comprasAppWeb": "Compras App - Versão Web",
+      "comprasAppAPK": "Compras App - APK Android",
+      "weather": "Weather - Aplicativo de Clima",
+      "comprasSite": "Site de Compras"
+    }
   },
   "Contact": {
     "sendMessage": "Enviar Mensagem",

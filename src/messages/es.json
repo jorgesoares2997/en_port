@@ -59,12 +59,18 @@
     "errorMessage": "Error al enviar el mensaje. Intenta de nuevo."
   },
   "Footer": {
-    "about": "Acerca de",
-    "description": "Mi portafolio tecnológico creado con tecnologías integradas utilizando Next.js, Tailwind CSS, TypeScript y Java Spring Boot.",
-    "links": "Enlaces",
+    "about": "Sobre",
+    "description": "Un portafolio que muestra mis habilidades y proyectos como desarrollador.",
     "contact": "Contacto",
     "email": "jorgesoares2997@gmail.com",
-    "rights": "© 2025 Todos los derechos reservados"
+    "rights": "© 2025 Jorge Soares. Todos los derechos reservados.",
+    "projects": {
+      "title": "Proyectos",
+      "comprasAppWeb": "Aplicación de Compras - Versión Web",
+      "comprasAppAPK": "Aplicación de Compras - APK para Android",
+      "weather": "Weather - Aplicación del Clima",
+      "comprasSite": "Sitio de Compras"
+    }
   },
 
   "Aboutpage": {
