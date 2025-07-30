@@ -4,7 +4,8 @@
     "about": "About",
     "projects": "Projects",
     "toolsAndTechs": "Tools and Techs",
-    "contact": "Contact"
+    "contact": "Contact",
+    "test": "Test CI/CD"
   },
   "Home": {
     "title": "Welcome to My Portfolio",

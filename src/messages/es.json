@@ -4,7 +4,8 @@
     "about": "Acerca de",
     "projects": "Proyectos",
     "toolsAndTechs": "Herramientas y Tecnologías",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "test": "Prueba CI/CD"
   },
   "Home": {
     "title": "Bienvenido a Mi Portafolio",
