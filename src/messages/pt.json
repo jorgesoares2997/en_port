@@ -4,7 +4,8 @@
     "about": "Sobre",
     "projects": "Projetos",
     "toolsAndTechs": "Ferramentas e Tecnologias",
-    "contact": "Contato"
+    "contact": "Contato",
+    "test": "Teste CI/CD"
   },
 
   "Home": {
