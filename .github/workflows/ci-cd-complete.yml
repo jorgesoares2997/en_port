@@ -1,108 +1,140 @@
+# Nome do workflow que aparece no GitHub Actions
 name: CI/CD Pipeline - Complete
 
+# Define quando o workflow será executado
+# - push: quando código é enviado para o repositório
+# - pull_request: quando um PR é criado ou atualizado
+# - branches: especifica quais branches ativam o workflow
 on:
   push:
-    branches: [ main, development ]
+    branches: [ main, development ]  # Só executa em push para main ou development
   pull_request:
-    branches: [ main, development ]
+    branches: [ main, development ]  # Só executa em PRs para main ou development
 
+# Lista de jobs (tarefas) que serão executados
 jobs:
+  # PRIMEIRO JOB: Testes, Linting e Build
+  # Este job deve passar antes de qualquer deploy
   test-and-build:
-    name: Testes, Linting e Build
-    runs-on: ubuntu-latest
+    name: Testes, Linting e Build  # Nome que aparece no GitHub Actions
+    runs-on: ubuntu-latest         # Sistema operacional onde roda (Ubuntu mais recente)
     
+    # Lista de passos (steps) que serão executados em sequência
     steps:
+      # PASSO 1: Baixar o código do repositório
       - name: Checkout do código
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4   # Action oficial do GitHub para baixar código
         
+      # PASSO 2: Configurar Node.js
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v4  # Action oficial para configurar Node.js
         with:
-          node-version: '18'
-          cache: 'npm'
+          node-version: '18'        # Versão específica do Node.js
+          cache: 'npm'              # Cache das dependências para acelerar builds
           
+      # PASSO 3: Instalar dependências
       - name: Instalar dependências
-        run: npm ci
+        run: npm ci                 # npm ci é mais rápido e seguro que npm install
         
+      # PASSO 4: Executar linting (verificação de qualidade de código)
       - name: Executar linting
-        run: npm run lint
+        run: npm run lint           # Executa ESLint para verificar padrões de código
         
+      # PASSO 5: Executar testes unitários
       - name: Executar testes
-        run: npm test
+        run: npm test               # Executa Jest para rodar todos os testes
         
+      # PASSO 6: Gerar relatório de cobertura de testes
       - name: Verificar cobertura de testes
-        run: npm run test:coverage
+        run: npm run test:coverage  # Gera relatório de quanto do código está testado
         
+      # PASSO 7: Fazer build do projeto
       - name: Build do projeto
-        run: npm run build
+        run: npm run build          # Compila o projeto Next.js para produção
         
+      # PASSO 8: Verificar vulnerabilidades de segurança
       - name: Executar auditoria de segurança
-        run: npm audit --audit-level=moderate
+        run: npm audit --audit-level=moderate  # Verifica dependências com vulnerabilidades
         
+      # PASSO 9: Enviar relatório de cobertura para Codecov
       - name: Upload cobertura para Codecov
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v3  # Action para enviar relatório de cobertura
         with:
-          file: ./coverage/lcov.info
-          flags: unittests
-          name: codecov-umbrella
-          fail_ci_if_error: false
+          file: ./coverage/lcov.info     # Arquivo de cobertura gerado pelo Jest
+          flags: unittests               # Marca este relatório como testes unitários
+          name: codecov-umbrella         # Nome do relatório no Codecov
+          fail_ci_if_error: false        # Não falha o CI se Codecov der erro
 
+  # SEGUNDO JOB: Deploy para Staging (ambiente de teste)
+  # Só executa se o primeiro job passar E se estiver na branch development
   deploy-staging:
     name: Deploy para Staging
     runs-on: ubuntu-latest
-    needs: test-and-build
-    if: github.ref == 'refs/heads/development'
+    needs: test-and-build           # DEPENDÊNCIA: só executa se test-and-build passar
+    if: github.ref == 'refs/heads/development'  # Só executa na branch development
     
     steps:
+      # PASSO 1: Baixar o código (necessário em cada job)
       - name: Checkout do código
         uses: actions/checkout@v4
         
+      # PASSO 2: Configurar Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '18'
           cache: 'npm'
           
+      # PASSO 3: Instalar dependências
       - name: Instalar dependências
         run: npm ci
         
+      # PASSO 4: Fazer build do projeto
       - name: Build do projeto
         run: npm run build
         
+      # PASSO 5: Deploy para Vercel (ambiente de staging)
       - name: Deploy para Vercel (Staging)
-        uses: amondnet/vercel-action@v25
+        uses: amondnet/vercel-action@v25  # Action não oficial para deploy no Vercel
         with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          vercel-args: '--prod'
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}        # Token de autenticação do Vercel
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}      # ID da organização no Vercel
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}  # ID do projeto no Vercel
+          vercel-args: '--prod'                            # Argumentos para o comando Vercel
 
+  # TERCEIRO JOB: Deploy para Produção
+  # Só executa se o primeiro job passar E se estiver na branch main
   deploy-production:
     name: Deploy para Produção
     runs-on: ubuntu-latest
-    needs: test-and-build
-    if: github.ref == 'refs/heads/main'
+    needs: test-and-build           # DEPENDÊNCIA: só executa se test-and-build passar
+    if: github.ref == 'refs/heads/main'  # Só executa na branch main
     
     steps:
+      # PASSO 1: Baixar o código
       - name: Checkout do código
         uses: actions/checkout@v4
         
+      # PASSO 2: Configurar Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '18'
           cache: 'npm'
           
+      # PASSO 3: Instalar dependências
       - name: Instalar dependências
         run: npm ci
         
+      # PASSO 4: Fazer build do projeto
       - name: Build do projeto
         run: npm run build
         
+      # PASSO 5: Deploy para Vercel (produção)
       - name: Deploy para Vercel (Produção)
         uses: amondnet/vercel-action@v25
         with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          vercel-args: '--prod' 
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}        # Token de autenticação do Vercel
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}      # ID da organização no Vercel
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}  # ID do projeto no Vercel
+          vercel-args: '--prod'                            # Argumentos para o comando Vercel 
