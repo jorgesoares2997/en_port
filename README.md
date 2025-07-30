@@ -2,6 +2,8 @@
 
 Um portfólio moderno e responsivo desenvolvido com Next.js, TypeScript e Tailwind CSS, com suporte a múltiplos idiomas (Português, Inglês e Espanhol).
 
+🚀 **CI/CD Ativo**: Deploy automático configurado!
+
 ## 🚀 Tecnologias Utilizadas
 
 - **Frontend**: Next.js 14, React 18, TypeScript
