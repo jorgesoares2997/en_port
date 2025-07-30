@@ -2,6 +2,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { FaMagnifyingGlass, FaWind, FaDroplet } from "react-icons/fa6";
+import Image from "next/image";
 
 interface WeatherData {
   name: string;
@@ -75,6 +76,8 @@ export default function WeatherMini({ apiKey, accessKey }: WeatherMiniProps) {
         <button
           onClick={handleSearch}
           className="p-2 bg-neon-green text-dark-blue rounded-r hover:bg-neon-pink transition-colors"
+          aria-label="Buscar cidade"
+          title="Buscar cidade"
         >
           <FaMagnifyingGlass />
         </button>
@@ -82,18 +85,22 @@ export default function WeatherMini({ apiKey, accessKey }: WeatherMiniProps) {
       {weatherData && (
         <div className="text-center text-neon-blue w-full">
           <div className="flex items-center justify-center mb-2">
-            <img
+            <Image
               src={`https://flagsapi.com/${weatherData.sys.country}/flat/32.png`}
               alt={`${weatherData.sys.country} flag`}
+              width={32}
+              height={32}
               className="mr-2"
             />
             <p className="text-lg font-bold">{weatherData.name}</p>
           </div>
           <p className="text-xl">{Math.round(weatherData.main.temp)}°C</p>
           <div className="flex items-center justify-center mb-2">
-            <img
+            <Image
               src={`http://openweathermap.org/img/wn/${weatherData.weather[0].icon}.png`}
               alt={weatherData.weather[0].description}
+              width={50}
+              height={50}
               className="mr-1"
             />
             <p className="text-sm capitalize">

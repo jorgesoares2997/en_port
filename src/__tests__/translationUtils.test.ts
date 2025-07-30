@@ -1,8 +1,17 @@
 import fs from 'fs'
 import path from 'path'
 
+// Tipos para as traduções
+interface TranslationValue {
+  [key: string]: string | TranslationValue
+}
+
+interface TranslationData {
+  [key: string]: TranslationValue
+}
+
 // Função para carregar arquivo JSON
-function loadTranslationFile(filePath: string): any {
+function loadTranslationFile(filePath: string): TranslationValue {
   try {
     const fullPath = path.join(process.cwd(), filePath)
     const fileContent = fs.readFileSync(fullPath, 'utf-8')
@@ -13,9 +22,9 @@ function loadTranslationFile(filePath: string): any {
 }
 
 // Função para obter o valor de uma chave aninhada
-function getNestedValue(obj: any, keyPath: string): any {
+function getNestedValue(obj: TranslationValue, keyPath: string): string | TranslationValue | undefined {
   const keys = keyPath.split('.')
-  let current = obj
+  let current: TranslationValue | string | undefined = obj
   
   for (const key of keys) {
     if (current && typeof current === 'object' && current[key] !== undefined) {
@@ -29,14 +38,14 @@ function getNestedValue(obj: any, keyPath: string): any {
 }
 
 // Função para traduzir uma chave
-function translateKey(translations: any, key: string): string {
+function translateKey(translations: TranslationValue, key: string): string {
   const value = getNestedValue(translations, key)
-  return value || key
+  return typeof value === 'string' ? value : key
 }
 
 describe('Translation Utils', () => {
   const languages = ['en', 'pt', 'es']
-  let translationData: { [key: string]: any } = {}
+  const translationData: TranslationData = {}
   
   beforeAll(() => {
     // Carrega todos os arquivos de tradução
@@ -55,7 +64,7 @@ describe('Translation Utils', () => {
   })
   
   test('deve obter valores aninhados corretamente', () => {
-    const testData = {
+    const testData: TranslationValue = {
       Navbar: {
         home: 'Home',
         about: 'About'
@@ -73,7 +82,7 @@ describe('Translation Utils', () => {
   })
   
   test('deve traduzir chaves corretamente', () => {
-    const testTranslations = {
+    const testTranslations: TranslationValue = {
       Navbar: {
         home: 'Início',
         about: 'Sobre'
