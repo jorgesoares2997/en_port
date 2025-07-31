@@ -106,7 +106,7 @@ jobs:
       - name: 🧪 Executar testes unitários
         run: |
           echo "🧪 Executando testes unitários..."
-          npm test -- --coverage --bail --watchAll=false || {
+          npx jest -- --coverage --bail --watchAll=false || {
             echo "❌ Testes unitários falharam!"
             echo "🚨 Corrija os testes antes do deploy."
             exit 1
@@ -117,27 +117,27 @@ jobs:
       - name: 📊 Verificar cobertura de testes
         run: |
           echo "📊 Verificando cobertura de testes..."
-          npm run test:coverage -- --watchAll=false --passWithNoTests
-          
-          # Verifica se a cobertura está acima do mínimo (80%)
-          COVERAGE=$(npm run test:coverage -- --watchAll=false --coverageReporters=text --coverageReporters=lcov | grep -o "All files[^%]*" | grep -o "[0-9]*\.[0-9]*" | head -1)
-          
+          npx jest --coverage --coverageReporters=json-summary --coverageReporters=text --bail --watchAll=false
+
+          # Extrai o valor da cobertura total de linhas do JSON gerado
+          COVERAGE=$(jq '.total.lines.pct' coverage/coverage-summary.json)
+
           if [ -z "$COVERAGE" ]; then
             echo "❌ Não foi possível determinar a cobertura de testes!"
             exit 1
           fi
-          
+
           echo "📈 Cobertura atual: ${COVERAGE}%"
-          
-          # Converte para número para comparação
-          COVERAGE_NUM=$(echo $COVERAGE | cut -d. -f1)
-          
+
+          # Converte cobertura para número inteiro para comparação
+          COVERAGE_NUM=$(printf "%.0f" "$COVERAGE")
+
           if [ "$COVERAGE_NUM" -lt 80 ]; then
             echo "❌ Cobertura de testes abaixo de 80% (atual: ${COVERAGE}%)"
             echo "🚨 Aumente a cobertura de testes antes do deploy."
             exit 1
           fi
-          
+
           echo "✅ Cobertura de testes adequada (${COVERAGE}%)"
       
       # PASSO 8: Upload relatório de cobertura
@@ -325,4 +325,4 @@ jobs:
             echo "🎉 Pipeline executado com sucesso!"
           else
             echo "❌ Pipeline falhou na validação de qualidade."
-          fi 
+          fi
