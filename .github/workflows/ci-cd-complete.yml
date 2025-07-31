@@ -106,7 +106,7 @@ jobs:
       - name: 🧪 Executar testes unitários
         run: |
           echo "🧪 Executando testes unitários..."
-          npx jest -- --coverage --bail --watchAll=false || {
+          npm test -- --coverage --bail --watchAll=false || { 
             echo "❌ Testes unitários falharam!"
             echo "🚨 Corrija os testes antes do deploy."
             exit 1
