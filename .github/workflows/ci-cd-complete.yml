@@ -106,7 +106,7 @@ jobs:
       - name: 🧪 Executar testes unitários
         run: |
           echo "🧪 Executando testes unitários..."
-          npm test -- --coverage --watchAll=false --passWithNoTests || {
+          npm test -- --coverage --bail --watchAll=false || {
             echo "❌ Testes unitários falharam!"
             echo "🚨 Corrija os testes antes do deploy."
             exit 1
@@ -120,7 +120,7 @@ jobs:
           npm run test:coverage -- --watchAll=false --passWithNoTests
           
           # Verifica se a cobertura está acima do mínimo (80%)
-          COVERAGE=$(npm run test:coverage -- --watchAll=false --passWithNoTests --coverageReporters=text --coverageReporters=lcov | grep -o "All files[^%]*" | grep -o "[0-9]*\.[0-9]*" | head -1)
+          COVERAGE=$(npm run test:coverage -- --watchAll=false --coverageReporters=text --coverageReporters=lcov | grep -o "All files[^%]*" | grep -o "[0-9]*\.[0-9]*" | head -1)
           
           if [ -z "$COVERAGE" ]; then
             echo "❌ Não foi possível determinar a cobertura de testes!"
