@@ -1,0 +1,18 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# ============================================================================
+# GIT HOOK: PRE-PUSH
+# ============================================================================
+# 
+# Este hook executa automaticamente antes de cada push
+# Garante que o código passe em todas as validações antes de ir para o repositório
+# ============================================================================
+
+echo "🚀 Executando validação do pipeline antes do push..."
+
+# Executar validação do pipeline
+npm run validate-pipeline
+
+# Se chegou até aqui, a validação passou
+echo "✅ Validação concluída com sucesso! Push permitido." 

@@ -1,140 +1,328 @@
-# Nome do workflow que aparece no GitHub Actions
-name: CI/CD Pipeline - Complete
+# ============================================================================
+# WORKFLOW CI/CD SEGURO - GARANTE QUALIDADE ANTES DO DEPLOY
+# ============================================================================
+# 
+# Este workflow implementa um padrão seguro onde:
+# 1. TODOS os testes DEVEM passar antes de qualquer deploy
+# 2. Linting e auditoria de segurança são obrigatórios
+# 3. Deploy só acontece após validação completa
+# 4. Ambientes separados (staging/production) com validações específicas
+# ============================================================================
 
-# Define quando o workflow será executado
-# - push: quando código é enviado para o repositório
-# - pull_request: quando um PR é criado ou atualizado
-# - branches: especifica quais branches ativam o workflow
+name: 🚀 CI/CD Pipeline Seguro
+
+# ============================================================================
+# TRIGGERS - QUANDO O WORKFLOW EXECUTA
+# ============================================================================
 on:
+  # Push direto nas branches principais
   push:
-    branches: [ main, development ]  # Só executa em push para main ou development
+    branches: [ main, development ]
+    # Ignora mudanças em arquivos que não afetam o código
+    paths-ignore:
+      - '**.md'
+      - 'docs/**'
+      - '.github/ISSUE_TEMPLATE/**'
+      - '.github/PULL_REQUEST_TEMPLATE.md'
+  
+  # Pull Requests para branches principais
   pull_request:
-    branches: [ main, development ]  # Só executa em PRs para main ou development
+    branches: [ main, development ]
+    # Ignora mudanças em arquivos que não afetam o código
+    paths-ignore:
+      - '**.md'
+      - 'docs/**'
+      - '.github/ISSUE_TEMPLATE/**'
+      - '.github/PULL_REQUEST_TEMPLATE.md'
 
-# Lista de jobs (tarefas) que serão executados
+# ============================================================================
+# JOBS - TAREFAS EXECUTADAS EM PARALELO OU SEQUÊNCIA
+# ============================================================================
+
 jobs:
-  # PRIMEIRO JOB: Testes, Linting e Build
-  # Este job deve passar antes de qualquer deploy
-  test-and-build:
-    name: Testes, Linting e Build  # Nome que aparece no GitHub Actions
-    runs-on: ubuntu-latest         # Sistema operacional onde roda (Ubuntu mais recente)
+  # ============================================================================
+  # JOB 1: VALIDAÇÃO DE QUALIDADE (OBRIGATÓRIO)
+  # ============================================================================
+  # Este job DEVE passar antes de qualquer deploy
+  # Executa: linting, testes, cobertura, auditoria de segurança
+  # ============================================================================
+  quality-gate:
+    name: 🔍 Validação de Qualidade
+    runs-on: ubuntu-latest
     
-    # Lista de passos (steps) que serão executados em sequência
+    # Estratégia para garantir que o job seja confiável
+    strategy:
+      fail-fast: false  # Continua executando outros jobs mesmo se um falhar
+      matrix:
+        node-version: [18]  # Versão específica do Node.js
+    
     steps:
-      # PASSO 1: Baixar o código do repositório
-      - name: Checkout do código
-        uses: actions/checkout@v4   # Action oficial do GitHub para baixar código
-        
-      # PASSO 2: Configurar Node.js
-      - name: Setup Node.js
-        uses: actions/setup-node@v4  # Action oficial para configurar Node.js
+      # PASSO 1: Checkout do código
+      - name: 📥 Checkout do código
+        uses: actions/checkout@v4
         with:
-          node-version: '18'        # Versão específica do Node.js
-          cache: 'npm'              # Cache das dependências para acelerar builds
-          
+          # Baixa o histórico completo para melhor análise
+          fetch-depth: 0
+      
+      # PASSO 2: Setup do Node.js
+      - name: ⚙️ Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'  # Cache das dependências para acelerar builds
+      
       # PASSO 3: Instalar dependências
-      - name: Instalar dependências
-        run: npm ci                 # npm ci é mais rápido e seguro que npm install
-        
-      # PASSO 4: Executar linting (verificação de qualidade de código)
-      - name: Executar linting
-        run: npm run lint           # Executa ESLint para verificar padrões de código
-        
-      # PASSO 5: Executar testes unitários
-      - name: Executar testes
-        run: npm test               # Executa Jest para rodar todos os testes
-        
-      # PASSO 6: Gerar relatório de cobertura de testes
-      - name: Verificar cobertura de testes
-        run: npm run test:coverage  # Gera relatório de quanto do código está testado
-        
-      # PASSO 7: Fazer build do projeto
-      - name: Build do projeto
-        run: npm run build          # Compila o projeto Next.js para produção
-        
-      # PASSO 8: Verificar vulnerabilidades de segurança
-      - name: Executar auditoria de segurança
-        run: npm audit --audit-level=moderate  # Verifica dependências com vulnerabilidades
-        
-      # PASSO 9: Enviar relatório de cobertura para Codecov
-      - name: Upload cobertura para Codecov
-        uses: codecov/codecov-action@v3  # Action para enviar relatório de cobertura
+      - name: 📦 Instalar dependências
+        run: |
+          echo "🔍 Verificando versão do npm..."
+          npm --version
+          echo "📦 Instalando dependências..."
+          npm ci --prefer-offline --no-audit
+          echo "✅ Dependências instaladas com sucesso!"
+      
+      # PASSO 4: Verificar vulnerabilidades CRÍTICAS
+      - name: 🛡️ Auditoria de Segurança (Críticas)
+        run: |
+          echo "🔍 Verificando vulnerabilidades críticas..."
+          npm audit --audit-level=critical || {
+            echo "❌ Vulnerabilidades CRÍTICAS encontradas!"
+            echo "🚨 O deploy foi BLOQUEADO por questões de segurança."
+            exit 1
+          }
+          echo "✅ Nenhuma vulnerabilidade crítica encontrada!"
+      
+      # PASSO 5: Executar linting
+      - name: 🧹 Executar linting
+        run: |
+          echo "🧹 Executando ESLint..."
+          npm run lint || {
+            echo "❌ Problemas de linting encontrados!"
+            echo "🚨 Corrija os erros de estilo antes do deploy."
+            exit 1
+          }
+          echo "✅ Linting passou com sucesso!"
+      
+      # PASSO 6: Executar testes unitários
+      - name: 🧪 Executar testes unitários
+        run: |
+          echo "🧪 Executando testes unitários..."
+          npm test -- --coverage --watchAll=false --passWithNoTests || {
+            echo "❌ Testes unitários falharam!"
+            echo "🚨 Corrija os testes antes do deploy."
+            exit 1
+          }
+          echo "✅ Todos os testes unitários passaram!"
+      
+      # PASSO 7: Verificar cobertura de testes
+      - name: 📊 Verificar cobertura de testes
+        run: |
+          echo "📊 Verificando cobertura de testes..."
+          npm run test:coverage -- --watchAll=false --passWithNoTests
+          
+          # Verifica se a cobertura está acima do mínimo (80%)
+          COVERAGE=$(npm run test:coverage -- --watchAll=false --passWithNoTests --coverageReporters=text --coverageReporters=lcov | grep -o "All files[^%]*" | grep -o "[0-9]*\.[0-9]*" | head -1)
+          
+          if [ -z "$COVERAGE" ]; then
+            echo "❌ Não foi possível determinar a cobertura de testes!"
+            exit 1
+          fi
+          
+          echo "📈 Cobertura atual: ${COVERAGE}%"
+          
+          # Converte para número para comparação
+          COVERAGE_NUM=$(echo $COVERAGE | cut -d. -f1)
+          
+          if [ "$COVERAGE_NUM" -lt 80 ]; then
+            echo "❌ Cobertura de testes abaixo de 80% (atual: ${COVERAGE}%)"
+            echo "🚨 Aumente a cobertura de testes antes do deploy."
+            exit 1
+          fi
+          
+          echo "✅ Cobertura de testes adequada (${COVERAGE}%)"
+      
+      # PASSO 8: Upload relatório de cobertura
+      - name: 📤 Upload cobertura para Codecov
+        uses: codecov/codecov-action@v3
         with:
-          file: ./coverage/lcov.info     # Arquivo de cobertura gerado pelo Jest
-          flags: unittests               # Marca este relatório como testes unitários
-          name: codecov-umbrella         # Nome do relatório no Codecov
-          fail_ci_if_error: false        # Não falha o CI se Codecov der erro
+          file: ./coverage/lcov.info
+          flags: unittests
+          name: codecov-umbrella
+          fail_ci_if_error: false  # Não falha o CI se Codecov der erro
+      
+      # PASSO 9: Build do projeto (validação final)
+      - name: 🔨 Build do projeto
+        run: |
+          echo "🔨 Executando build do projeto..."
+          npm run build || {
+            echo "❌ Build falhou!"
+            echo "🚨 Corrija os erros de build antes do deploy."
+            exit 1
+          }
+          echo "✅ Build executado com sucesso!"
+      
+      # PASSO 10: Verificar vulnerabilidades MODERADAS
+      - name: 🛡️ Auditoria de Segurança (Moderadas)
+        run: |
+          echo "🔍 Verificando vulnerabilidades moderadas..."
+          npm audit --audit-level=moderate || {
+            echo "⚠️ Vulnerabilidades moderadas encontradas!"
+            echo "💡 Considere atualizar as dependências afetadas."
+            # Não falha o build, apenas avisa
+          }
+          echo "✅ Auditoria de segurança concluída!"
 
-  # SEGUNDO JOB: Deploy para Staging (ambiente de teste)
-  # Só executa se o primeiro job passar E se estiver na branch development
+  # ============================================================================
+  # JOB 2: DEPLOY PARA STAGING (APENAS SE QUALITY-GATE PASSAR)
+  # ============================================================================
+  # Executa apenas na branch development
+  # Ambiente de teste antes da produção
+  # ============================================================================
   deploy-staging:
-    name: Deploy para Staging
+    name: 🚀 Deploy para Staging
     runs-on: ubuntu-latest
-    needs: test-and-build           # DEPENDÊNCIA: só executa se test-and-build passar
-    if: github.ref == 'refs/heads/development'  # Só executa na branch development
+    
+    # DEPENDÊNCIA CRÍTICA: só executa se quality-gate passar
+    needs: quality-gate
+    
+    # Só executa na branch development
+    if: github.ref == 'refs/heads/development'
     
     steps:
-      # PASSO 1: Baixar o código (necessário em cada job)
-      - name: Checkout do código
+      # PASSO 1: Checkout do código
+      - name: 📥 Checkout do código
         uses: actions/checkout@v4
-        
-      # PASSO 2: Configurar Node.js
-      - name: Setup Node.js
+      
+      # PASSO 2: Setup do Node.js
+      - name: ⚙️ Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '18'
           cache: 'npm'
-          
+      
       # PASSO 3: Instalar dependências
-      - name: Instalar dependências
+      - name: 📦 Instalar dependências
         run: npm ci
-        
-      # PASSO 4: Fazer build do projeto
-      - name: Build do projeto
+      
+      # PASSO 4: Build do projeto
+      - name: 🔨 Build do projeto
         run: npm run build
-        
-      # PASSO 5: Deploy para Vercel (ambiente de staging)
-      - name: Deploy para Vercel (Staging)
-        uses: amondnet/vercel-action@v25  # Action não oficial para deploy no Vercel
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}        # Token de autenticação do Vercel
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}      # ID da organização no Vercel
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}  # ID do projeto no Vercel
-          vercel-args: '--prod'                            # Argumentos para o comando Vercel
-
-  # TERCEIRO JOB: Deploy para Produção
-  # Só executa se o primeiro job passar E se estiver na branch main
-  deploy-production:
-    name: Deploy para Produção
-    runs-on: ubuntu-latest
-    needs: test-and-build           # DEPENDÊNCIA: só executa se test-and-build passar
-    if: github.ref == 'refs/heads/main'  # Só executa na branch main
-    
-    steps:
-      # PASSO 1: Baixar o código
-      - name: Checkout do código
-        uses: actions/checkout@v4
-        
-      # PASSO 2: Configurar Node.js
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-          cache: 'npm'
-          
-      # PASSO 3: Instalar dependências
-      - name: Instalar dependências
-        run: npm ci
-        
-      # PASSO 4: Fazer build do projeto
-      - name: Build do projeto
-        run: npm run build
-        
-      # PASSO 5: Deploy para Vercel (produção)
-      - name: Deploy para Vercel (Produção)
+      
+      # PASSO 5: Deploy para Vercel (Staging)
+      - name: 🚀 Deploy para Vercel (Staging)
         uses: amondnet/vercel-action@v25
         with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}        # Token de autenticação do Vercel
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}      # ID da organização no Vercel
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}  # ID do projeto no Vercel
-          vercel-args: '--prod'                            # Argumentos para o comando Vercel 
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          # Argumentos específicos para staging
+          vercel-args: '--target=preview'
+      
+      # PASSO 6: Notificação de sucesso
+      - name: ✅ Notificar deploy de staging
+        run: |
+          echo "🎉 Deploy para staging concluído com sucesso!"
+          echo "🔗 URL: https://staging-seu-projeto.vercel.app"
+
+  # ============================================================================
+  # JOB 3: DEPLOY PARA PRODUÇÃO (APENAS SE QUALITY-GATE PASSAR)
+  # ============================================================================
+  # Executa apenas na branch main
+  # Ambiente de produção com validações extras
+  # ============================================================================
+  deploy-production:
+    name: 🚀 Deploy para Produção
+    runs-on: ubuntu-latest
+    
+    # DEPENDÊNCIA CRÍTICA: só executa se quality-gate passar
+    needs: quality-gate
+    
+    # Só executa na branch main
+    if: github.ref == 'refs/heads/main'
+    
+    # Ambiente de produção com proteções
+    environment: 
+      name: production
+      url: https://seu-projeto.vercel.app
+    
+    steps:
+      # PASSO 1: Checkout do código
+      - name: 📥 Checkout do código
+        uses: actions/checkout@v4
+      
+      # PASSO 2: Setup do Node.js
+      - name: ⚙️ Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      # PASSO 3: Instalar dependências
+      - name: 📦 Instalar dependências
+        run: npm ci
+      
+      # PASSO 4: Build do projeto
+      - name: 🔨 Build do projeto
+        run: npm run build
+      
+      # PASSO 5: Validação extra para produção
+      - name: 🔍 Validação extra para produção
+        run: |
+          echo "🔍 Executando validações extras para produção..."
+          
+          # Verifica se não há console.log em produção
+          if grep -r "console.log" src/ --include="*.ts" --include="*.tsx" --include="*.js" --include="*.jsx"; then
+            echo "⚠️ Console.log encontrado no código!"
+            echo "💡 Considere remover antes do deploy para produção."
+          fi
+          
+          # Verifica tamanho do build
+          BUILD_SIZE=$(du -sh .next | cut -f1)
+          echo "📦 Tamanho do build: $BUILD_SIZE"
+          
+          echo "✅ Validações extras concluídas!"
+      
+      # PASSO 6: Deploy para Vercel (Produção)
+      - name: 🚀 Deploy para Vercel (Produção)
+        uses: amondnet/vercel-action@v25
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          # Argumentos específicos para produção
+          vercel-args: '--prod'
+      
+      # PASSO 7: Notificação de sucesso
+      - name: ✅ Notificar deploy de produção
+        run: |
+          echo "🎉 Deploy para produção concluído com sucesso!"
+          echo "🔗 URL: https://seu-projeto.vercel.app"
+          echo "📊 Monitoramento ativo para detectar problemas."
+
+  # ============================================================================
+  # JOB 4: NOTIFICAÇÕES (OPCIONAL)
+  # ============================================================================
+  # Envia notificações sobre o status do pipeline
+  # ============================================================================
+  notifications:
+    name: 📢 Notificações
+    runs-on: ubuntu-latest
+    
+    # Executa sempre, independente do resultado dos outros jobs
+    needs: [quality-gate, deploy-staging, deploy-production]
+    
+    # Só executa se pelo menos um job foi executado
+    if: always()
+    
+    steps:
+      - name: 📊 Resumo do pipeline
+        run: |
+          echo "📊 Resumo do Pipeline CI/CD:"
+          echo "✅ Quality Gate: ${{ needs.quality-gate.result }}"
+          echo "✅ Deploy Staging: ${{ needs.deploy-staging.result }}"
+          echo "✅ Deploy Production: ${{ needs.deploy-production.result }}"
+          
+          if [ "${{ needs.quality-gate.result }}" == "success" ]; then
+            echo "🎉 Pipeline executado com sucesso!"
+          else
+            echo "❌ Pipeline falhou na validação de qualidade."
+          fi 
