@@ -10,6 +10,13 @@
   "Home": {
     "title": "Bienvenido a Mi Portafolio",
     "description": "Desarrollador apasionado por crear soluciones modernas y eficientes. ¡Explora mis proyectos y tecnologías favoritas!",
+    "newPortfolioModal": {
+      "badge": "Nuevo portafolio en línea",
+      "title": "Conoce la nueva versión de mi portafolio",
+      "description": "Lancé un portafolio más moderno, con nueva arquitectura, nuevos proyectos y una mejor experiencia visual.",
+      "goToNewPortfolio": "Ir al nuevo portafolio",
+      "stayHere": "Continuar en este sitio"
+    },
     "techStackTitle": "Mis Tecnologías",
     "techStackDescription": "Estas son algunas de las herramientas que utilizo para construir aplicaciones increíbles:",
     "tech": {

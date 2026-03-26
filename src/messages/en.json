@@ -10,6 +10,13 @@
   "Home": {
     "title": "Welcome to My Portfolio",
     "description": "A passionate developer crafting modern and efficient solutions. Explore my projects and favorite technologies!",
+    "newPortfolioModal": {
+      "badge": "New portfolio is live",
+      "title": "Check out the new version of my portfolio",
+      "description": "I launched a more modern portfolio with a new architecture, new projects, and a better visual experience.",
+      "goToNewPortfolio": "Go to the new portfolio",
+      "stayHere": "Continue on this site"
+    },
     "techStackTitle": "My Tech Stack",
     "techStackDescription": "Here are some of the tools I use to build amazing applications:",
     "tech": {
